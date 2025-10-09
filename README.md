@@ -8,8 +8,8 @@ This file uses Mark Down syntax. For more information see [here]([x]https://www.
 
 [//]: # (TODO: Fill inn your name and student ID)
 
-STUDENT NAME = "Your name"  
-STUDENT ID = "Your ID"
+STUDENT NAME = Cathrine Kristiansen  
+STUDENT ID = 128744
 
 ## Project description
 
@@ -38,4 +38,5 @@ What is the input and output of the program? What is the expected behaviour of t
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
