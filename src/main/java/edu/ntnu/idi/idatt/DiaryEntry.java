@@ -7,6 +7,9 @@ import java.time.LocalDate;
  * It holds the information from a client day by day.
  * It asks for the id, date, title and content.
  *
+ * @author Cathrine Kristiansen
+ * @version 1.0
+ * @since 2025-10-12
  */
 public class DiaryEntry {
 
@@ -42,6 +45,7 @@ public class DiaryEntry {
 
     /**
      * Takes the id of the entry.
+     * @return Id
      */
     public int getId() {
         return Id;
@@ -49,6 +53,7 @@ public class DiaryEntry {
 
     /**
      * Takes the today's date of the entry.
+     * @return date
      */
     public LocalDate getDate() {
         return date;
@@ -56,12 +61,16 @@ public class DiaryEntry {
 
     /**
      * Takes the title of the entry.
+     * @return title
      */
     public String getTitle() {
         return title;
     }
+
     /**
-     *
+     * Sets the title of the entry.
+     * @param title
+     * @throws IllegalArgumentException if the title shows blank
      */
     public void setTitle(String title) {
         if (title == null) {
@@ -72,11 +81,17 @@ public class DiaryEntry {
 
     /**
      * Takes the content of the entry.
+     * @return content
      */
     public String getContent() {
         return content;
     }
 
+    /**
+     * Sets the content of the entry.
+     * @param content
+     * @throws IllegalArgumentException if the content is blank.
+     */
     public void setContent(String content) {
         if (content == null) {
             throw new IllegalArgumentException("content is null");
