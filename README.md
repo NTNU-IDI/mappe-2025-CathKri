@@ -21,6 +21,8 @@ STUDENT ID = 128744
 
 ## Link to repository
 
+https://github.com/NTNU-IDI/mappe-2025-CathKri
+
 [//]: # (TODO: Include a link to your GitHub repository here.)
 
 ## How to run the project
@@ -40,6 +42,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
