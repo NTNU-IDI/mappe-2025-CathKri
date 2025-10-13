@@ -4,7 +4,7 @@
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/NzRaDbQp)
 # Portfolio project IDATT1003
-[//]: This file uses Mark Down syntax. For more information see [here](https://www.markdownguide.org/basic-syntax/).
+[//]: # This file uses Mark Down syntax. For more information see [here](https://www.markdownguide.org/basic-syntax/).
 
 [//]: # (TODO: Fill inn your name and student ID)
 
@@ -17,11 +17,11 @@ STUDENT ID = 128744
 
 ### Project structure
 
-#Source Files:
+# Source Files:
 
-#Packages:
+# Packages:
 
-#JUnit Test Classes:
+# JUnit Test Classes:
 
 [//]: # (TODO: Describe the structure of your project here. How have you used packages in your structure. Where are all sourcefiles stored. Where are all JUnit-test classes stored. etc.)
 
@@ -33,17 +33,17 @@ https://github.com/NTNU-IDI/mappe-2025-CathKri
 
 ### How to run the project
 
-#Open the Project:
+# Open the Project:
 
-#Ensure is Configured:
+# Ensure is Configured:
 
-#Build the Project:
+# Build the Project:
 
-#Run the Application:
+# Run the Application:
 
-#Input and Output:
+# Input and Output:
 
-#Expected Behavior:
+# Expected Behavior:
 
 [//]: # (TODO: Describe how to run your project here. What is the main class? What is the main method?
 What is the input and output of the program? What is the expected behaviour of the program?)
@@ -60,6 +60,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
