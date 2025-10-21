@@ -1,8 +1,6 @@
 ﻿# mappe-2025-CathKri
 
-""""
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/NzRaDbQp)
 # Portfolio project IDATT1003
  <!This file uses Mark Down syntax. For more information see [here](https://www.markdownguide.org/basic-syntax/).>
 
@@ -60,6 +58,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
