@@ -2,8 +2,7 @@ package edu.ntnu.idi.idatt;
 
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.UUID;
+import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,27 +10,25 @@ class DiaryEntryTest {
 
     @Test
     void constructorStoresAllValue() {
-        int id = 1;
+        String authorsName = "Shara";
         LocalDate date = LocalDate.of(2025, 10, 12);
+        LocalTime time = LocalTime.parse("15:00");
         String title = "Day one";
         String content = "To do list";
 
 
-        DiaryEntry entry = new DiaryEntry(id, title, content);
+        DiaryEntry entry = new DiaryEntry(authorsName, date, time, title, content);
 
-        assertEquals(id, entry.getId());
+        assertEquals(authorsName, entry.getAuthorsName());
         assertEquals(date, entry.getDate());
+        assertEquals(time, entry.getTime());
         assertEquals(title, entry.getTitle());
         assertEquals(content, entry.getContent());
 
     }
     @Test
     void settersUpdateText() {
-        DiaryEntry entry = new DiaryEntry(
-                1,
-                "Old title",
-                "Old text"
-        );
+        DiaryEntry entry = new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list.");
 
         entry.setTitle("New title");
         entry.setContent("New text");
@@ -42,7 +39,7 @@ class DiaryEntryTest {
     @Test
     void constructorRejectsNullId(){
         assertThrows(IllegalArgumentException.class, () ->
-                new DiaryEntry(null, "Title", "Content"));
+                new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list."));
     }
 
     @Test
@@ -50,16 +47,12 @@ class DiaryEntryTest {
         int id =1;
 
         assertThrows(IllegalArgumentException.class, () ->
-                new DiaryEntry(id, "  ", "Content"));
+                new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list."));
 
     }
     @Test
     void setterRejectsBlankContent(){
-        DiaryEntry entry = new DiaryEntry(
-                1,
-                "Some title",
-                "Some content"
-        );
+        DiaryEntry entry = new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list.");
         assertThrows(IllegalArgumentException.class, () -> entry.setContent(""));
     }
 

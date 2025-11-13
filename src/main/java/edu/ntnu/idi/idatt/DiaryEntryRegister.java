@@ -4,11 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DiaryEntryRegister {
-    private ArrayList<DiaryEntry> DiaryEntrys;
     private ArrayList<DiaryEntry> DiaryEntries;
 
     public DiaryEntryRegister() {
-        DiaryEntrys = new ArrayList();
+        DiaryEntries = new ArrayList();
     }
 
     public void addDiaryEntry(DiaryEntry diaryEntry) {

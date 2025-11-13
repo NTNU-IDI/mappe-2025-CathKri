@@ -1,6 +1,7 @@
 package edu.ntnu.idi.idatt;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * This class represents a diary entry.
@@ -13,22 +14,24 @@ import java.time.LocalDate;
  */
 public class DiaryEntry {
 
-    private final Integer Id;
+    private final String authorsName;
     private final LocalDate date;
+    private final LocalTime time;
     private String title;
     private String content;
+
 
     /**
      * This is the constructor for diary entry.
      * It takes the parameters id, title and content.
      * It also sets the date to today's date.
      *
-     * @param id      id of the entry (can not be blank)
+     * @param authorsName      id of the entry (can not be blank)
      * @param title   title of the entry (can not be blank)
      * @param content content of the entry (can not be blank)
      */
-    public DiaryEntry(Integer id, String title, String content) {
-        if (id == null) {
+    public DiaryEntry(String authorsName, LocalDate date, LocalTime time, String title, String content) {
+        if (authorsName == null) {
             throw new IllegalArgumentException("id is missing");
         }
         if (title == null) {
@@ -37,20 +40,22 @@ public class DiaryEntry {
         if (content == null) {
             throw new IllegalArgumentException("content is missing");
         }
-        this.Id = id;
-        this.date = LocalDate.now();
-        //LocalDate date = LocalDate.now();
+        this.authorsName = authorsName;
+        this.date = date;
+        this.time = time;
         this.title = title;
         this.content = content;
     }
+
+
 
     /**
      * Takes the id of the entry.
      *
      * @return Id
      */
-    public int getId() {
-        return Id;
+    public String getAuthorsName() {
+        return authorsName;
     }
 
     /**
@@ -60,6 +65,14 @@ public class DiaryEntry {
      */
     public LocalDate getDate() {
         return date;
+    }
+
+    /**
+     *
+     * @return time
+     */
+    public LocalTime getTime() {
+        return time;
     }
 
     /**
