@@ -39,12 +39,14 @@ public class DiaryEntry {
         }
         this.Id = id;
         this.date = LocalDate.now();
+        //LocalDate date = LocalDate.now();
         this.title = title;
         this.content = content;
     }
 
     /**
      * Takes the id of the entry.
+     *
      * @return Id
      */
     public int getId() {
@@ -53,6 +55,7 @@ public class DiaryEntry {
 
     /**
      * Takes the today's date of the entry.
+     *
      * @return date
      */
     public LocalDate getDate() {
@@ -61,6 +64,7 @@ public class DiaryEntry {
 
     /**
      * Takes the title of the entry.
+     *
      * @return title
      */
     public String getTitle() {
@@ -69,6 +73,7 @@ public class DiaryEntry {
 
     /**
      * Sets the title of the entry.
+     *
      * @param title
      * @throws IllegalArgumentException if the title shows blank
      */
@@ -81,6 +86,7 @@ public class DiaryEntry {
 
     /**
      * Takes the content of the entry.
+     *
      * @return content
      */
     public String getContent() {
@@ -89,6 +95,7 @@ public class DiaryEntry {
 
     /**
      * Sets the content of the entry.
+     *
      * @param content
      * @throws IllegalArgumentException if the content is blank.
      */
