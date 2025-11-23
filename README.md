@@ -86,9 +86,12 @@ Or using IDE build tools.
 
 #### Run the Application:
 Run the main class:
-edu.ntnu.idi.idatt.DiaryApplication
+
+[edu.ntnu.idi.idatt.DiaryApplication](src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java)
+
 Or via terminal:
-mvn exec:java -Dexec.mainClass="edu.ntnu.idi.idatt.DiaryApplication"
+
+mvn exec:java -Dexec.mainClass="[edu.ntnu.idi.idatt.DiaryApplication](src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java)"
 
 #### Input and Output:
 - The program starts with three example diary entries and authors.
@@ -185,6 +188,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
