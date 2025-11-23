@@ -27,7 +27,7 @@ The application allows users to create, view, search, and delete diary entries. 
 
 - Logging using Java’s built-in logging framework
 
-This project satisfies the functional requirements for both Level 1 and Level 2 described in the assignment.
+This project satisfies the functional requirements for both **Level 1** and **Level 2** described in the assignment.
 
 ## Project structure
 
@@ -74,6 +74,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
