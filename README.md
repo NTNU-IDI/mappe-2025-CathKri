@@ -155,7 +155,7 @@ The application ends.
 The project uses JUnit 5 for unit testing, and all tests are executed through Maven.
 All test classes are located in the standard Maven test directory:
 
-src/test/java/edu/ntnu/idi/idatt/
+[src/test/java/edu/ntnu/idi/idatt/](src/test/java/edu/ntnu/idi/idatt/)
 
 To run the entire test suite, use one of the following methods:
 
@@ -184,6 +184,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
