@@ -36,7 +36,7 @@ public class AuthorRegister {
 
   /**
    * @param register register.
-   * @param author author.
+   * @param author   author.
    * @return allDiaryEntries.
    */
   public List<DiaryEntry> findAllDiaryEntriesFromAuthor(DiaryEntryRegister register, Author author) {
@@ -50,9 +50,33 @@ public class AuthorRegister {
     return allDiaryEntries;
   }
 
-  public int numberOfPostPerAuthor(DiaryEntryRegister register, Author author) {
-    return findAllDiaryEntriesFromAuthor(register, author).size();
+  public List<AuthorPostCount> createAuthorPostList(DiaryEntryRegister register, AuthorRegister authorRegister) {
+    List<AuthorPostCount> list = new ArrayList<>();
+
+    for (Author author : authorRegister.getAuthorsList()) {
+      int count = numberOfPostPerAuthor(register, author);
+      list.add(new AuthorPostCount(author, count));
+    }
+
+    return list;
   }
 
+  public int numberOfPostPerAuthor(DiaryEntryRegister register, Author author) {
+    int count = 0;
+    for (DiaryEntry diaryEntry : register.getAllDiaryEntries()) {
+      if (diaryEntry.getAuthor().equals(author)) {
+        count++;
+      }
+    }
+    return count;
+  }
 
+  public void printAuthorPostList(List<AuthorPostCount> list) {
+    System.out.println("Author\t\tPosts");
+    System.out.println("--------------------------");
+
+    for (AuthorPostCount item : list) {
+      System.out.println(item.author().firstName + " " + item.author().lastName + ": " + "\t\t" + item.postCount());
+    }
+  }
 }

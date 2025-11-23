@@ -3,6 +3,8 @@ package edu.ntnu.idi.idatt;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -14,14 +16,21 @@ import java.util.logging.Logger;
 public class DiaryUi {
 
   Logger logger = Logger.getLogger(getClass().getName());
-
+  DiaryEntryRegister diaryEntryRegister;
+  AuthorRegister authorRegister;
 
   private void addDiaryEntry(DiaryEntryRegister register, AuthorRegister AuthorRegister, Scanner scanner) {
     logger.info("Register new diary entry: ");
     logger.info("Id number: ");
-
-    final int id = scanner.nextInt();
-    scanner.nextLine();
+    final int id;
+    try {
+      id = scanner.nextInt();
+      scanner.nextLine();
+    } catch (InputMismatchException exception) {
+      scanner.nextLine();
+      logger.info("Invalid input: " + exception.getMessage());
+      return;
+    }
 
     final Author author = findOrCreateAuthor(AuthorRegister);
 
@@ -80,10 +89,18 @@ public class DiaryUi {
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-    LocalDateTime FromDate = LocalDate.parse(fromInput, formatter).atStartOfDay();
-    LocalDateTime toDate = LocalDate.parse(toInput, formatter).atTime(23, 59, 59);
+    LocalDateTime fromDate;
+    LocalDateTime toDate;
+    try {
+      fromDate = LocalDate.parse(fromInput, formatter).atStartOfDay();
+      toDate = LocalDate.parse(toInput, formatter).atTime(23, 59, 59);
+    } catch (DateTimeParseException exception) {
+      logger.warning("Invalid date: " + exception.getMessage());
+      return;
+    }
 
-    List<DiaryEntry> results = register.finnRegistrertDagbokinnleggEtterDato(FromDate, toDate);
+
+    List<DiaryEntry> results = register.findRegisteredDiaryEntriesBasedOnDate(fromDate, toDate);
 
     printResults(results);
   }
@@ -99,39 +116,49 @@ public class DiaryUi {
     String word = scanner.nextLine();
 
     String searchTerm = word.toLowerCase();
+    int searchResult = 0;
 
     for (DiaryEntry DiaryEntry : register.getAllDiaryEntries()) {
       String title = DiaryEntry.getTitle();
       String content = DiaryEntry.getContent();
-      
 
       if ((title != null && title.toLowerCase().contains(searchTerm)) || (content != null && content.toLowerCase().contains(searchTerm))) {
         String diaryEntry = DiaryEntry.toString();
         logger.info(diaryEntry);
+        searchResult++;
       }
+    }
+
+    if (searchResult == 0) {
+      logger.warning("No diaries have been found with the word: " + word);
     }
   }
 
   /**
    * Number of diaries per author.
    *
-   * @param register          register
+   * @param diaryEntryRegister       diaryEntryRegister
    * @param authorRegister authorRegister
    */
-  public void numberOfPostPerAuthor(DiaryEntryRegister register, AuthorRegister authorRegister) {
+  public void numberOfPostPerAuthor(DiaryEntryRegister diaryEntryRegister, AuthorRegister authorRegister) {
     logger.info("Number of posts per author: ");
-    List<Author> authorsList = authorRegister.getAuthorsList();
-    for (Author author : authorsList) {
-      String authorEntry = author.getFirstName() + " " + author.getLastName() + ": " + authorRegister.numberOfPostPerAuthor(register, author);
-      logger.info(authorEntry);
-    }
-
+    List<AuthorPostCount> authorPostCounts = authorRegister.createAuthorPostList(diaryEntryRegister, authorRegister);
+    authorRegister.printAuthorPostList(authorPostCounts);
   }
 
   private void DeleteDiaryEntry(DiaryEntryRegister register, Scanner scanner) {
     logger.info("Delete diary Entry: ");
     logger.info("Id number: ");
-    int id = scanner.nextInt();
+    int id;
+    try {
+      id = scanner.nextInt();
+      scanner.nextLine();
+    } catch (InputMismatchException exception) {
+      scanner.nextLine();
+      logger.info("Invalid input: " + exception.getMessage());
+      return;
+    }
+
     register.DeleteDiaryEntry(register, id);
   }
 
@@ -152,6 +179,8 @@ public class DiaryUi {
    * init.
    */
   public void init() {
+    diaryEntryRegister = new DiaryEntryRegister();
+    authorRegister = new AuthorRegister();
     logger.info("The diary-app is ready ");
   }
 
@@ -159,16 +188,21 @@ public class DiaryUi {
    * start.
    */
   public void start() {
-    DiaryEntry morningEntry = new DiaryEntry(1, new Author("Shara", "Johansen", "sara@hotmail.com"), LocalDateTime.now(), "Plan of the day", "To-do list:");
-    DiaryEntry studySession = new DiaryEntry(2, new Author("Mikael", "Evensen", "evensen@hotmail.com"), LocalDateTime.now(), "Today's study session", "Completed all required math assignments");
-    DiaryEntry reflectionOfTheDay = new DiaryEntry(3, new Author("Tore", "Olavsen", "TorOlav@hotmail.com"), LocalDateTime.now(), "Overview of the day", "Today I worked on math assignments and wrote a note for the English assignment.");
+    Author shara = new Author("Shara", "Johansen", "sara@hotmail.com");
+    Author mikael = new Author("Mikael", "Evensen", "evensen@hotmail.com");
+    Author tore = new Author("Tore", "Olavsen", "TorOlav@hotmail.com");
+
+    DiaryEntry morningEntry = new DiaryEntry(1, shara, LocalDateTime.now(), "Plan of the day", "To-do list:");
+    DiaryEntry studySession = new DiaryEntry(2, mikael, LocalDateTime.now(), "Today's study session", "Completed all required math assignments");
+    DiaryEntry reflectionOfTheDay = new DiaryEntry(3, tore, LocalDateTime.now(), "Overview of the day", "Today I worked on math assignments and wrote a note for the English assignment.");
 
     printDiaryEntry(morningEntry);
     printDiaryEntry(studySession);
     printDiaryEntry(reflectionOfTheDay);
 
-    DiaryEntryRegister diaryEntryRegister = new DiaryEntryRegister();
-
+    authorRegister.addAuthor(shara);
+    authorRegister.addAuthor(mikael);
+    authorRegister.addAuthor(tore);
 
     diaryEntryRegister.addDiaryEntry(morningEntry);
     diaryEntryRegister.addDiaryEntry(studySession);
@@ -177,11 +211,16 @@ public class DiaryUi {
     Scanner scanner = new Scanner(System.in);
     int choice = 0;
 
-    AuthorRegister authorRegister = new AuthorRegister();
     while (choice != 7) {
       printMenu();
-      choice = scanner.nextInt();
-      scanner.nextLine();
+      try {
+        choice = scanner.nextInt();
+        scanner.nextLine();
+      } catch (Exception exception) {
+        scanner.nextLine();
+        logger.info("Invalid input: " + exception.getMessage());
+      }
+
       switch (choice) {
         case 1:
           addDiaryEntry(diaryEntryRegister, authorRegister, scanner);

@@ -5,78 +5,78 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DiaryEntryRegister {
-  private final ArrayList<DiaryEntry> AlleDagbokinnlegg;
+  private final ArrayList<DiaryEntry> AllDairyEntries;
 
   public DiaryEntryRegister() {
-    AlleDagbokinnlegg = new ArrayList();
+    AllDairyEntries = new ArrayList();
   }
 
-  public void addDiaryEntry(DiaryEntry dagbokinnlegg) {
-    AlleDagbokinnlegg.add(dagbokinnlegg);
+  public void addDiaryEntry(DiaryEntry diaryEntry) {
+    AllDairyEntries.add(diaryEntry);
   }
 
   public ArrayList<DiaryEntry> getAllDiaryEntries() {
-    return AlleDagbokinnlegg;
+    return AllDairyEntries;
   }
 
-  public void finnAlleRegistrerteDagbokinnlegg() {
-    ArrayList<DiaryEntry> AlleDagbokinnlegg = this.AlleDagbokinnlegg;
-    for (DiaryEntry Dagbokinnlegg : AlleDagbokinnlegg) {
-      System.out.println(Dagbokinnlegg.toString());
+  public void findAllRegisteredDiaryEntries() {
+    ArrayList<DiaryEntry> allDairyEntries = this.AllDairyEntries;
+    for (DiaryEntry diaryEntry : allDairyEntries) {
+      System.out.println(diaryEntry.toString());
     }
   }
 
-  public List<DiaryEntry> finnRegistrertDagbokinnleggEtterDato(LocalDateTime fraDato, LocalDateTime tilDato) {
-    List<DiaryEntry> resultatListe = new ArrayList<>();
+  public List<DiaryEntry> findRegisteredDiaryEntriesBasedOnDate(LocalDateTime fromDato, LocalDateTime toDato) {
+    List<DiaryEntry> resultsList = new ArrayList<>();
 
-    for (DiaryEntry dagbokinnlegg : AlleDagbokinnlegg) {
-      LocalDateTime opprettet = dagbokinnlegg.getCreatedAt();
+    for (DiaryEntry diaryEntry : AllDairyEntries) {
+      LocalDateTime createdAt = diaryEntry.getCreatedAt();
 
-      if ((opprettet.isEqual(fraDato) || opprettet.isAfter(fraDato)) &&
-          (opprettet.isEqual(tilDato) || opprettet.isBefore(tilDato))) {
+      if ((createdAt.isEqual(fromDato) || createdAt.isAfter(fromDato)) &&
+          (createdAt.isEqual(toDato) || createdAt.isBefore(toDato))) {
 
-        resultatListe.add(dagbokinnlegg);
+        resultsList.add(diaryEntry);
       }
     }
-    return resultatListe;
+    return resultsList;
   }
 
-  public ArrayList<DiaryEntry> finnAlleDagbokinnleggBasertPåOrd(String ord) {
-    ArrayList<DiaryEntry> resultatListe = new ArrayList<>();
+  public ArrayList<DiaryEntry> findAllDiaryEntriesBasedOnWord(String word) {
+    ArrayList<DiaryEntry> resultsList = new ArrayList<>();
 
-    if (ord == null || ord.isBlank()) {
-      return resultatListe;
+    if (word == null || word.isBlank()) {
+      return resultsList;
     }
 
-    String søkeord = ord.toLowerCase();
+    String searchTerm = word.toLowerCase();
 
-    for (DiaryEntry dagbokinnlegg : AlleDagbokinnlegg) {
-      String tittel = dagbokinnlegg.getTitle();
-      String innhold = dagbokinnlegg.getContent();
+    for (DiaryEntry diaryEntry : AllDairyEntries) {
+      String title = diaryEntry.getTitle();
+      String content = diaryEntry.getContent();
 
-      if ((tittel != null && tittel.toLowerCase().contains(søkeord)) ||
-          (innhold != null && innhold.toLowerCase().contains(søkeord))) {
+      if ((title != null && title.toLowerCase().contains(searchTerm)) ||
+          (content != null && content.toLowerCase().contains(searchTerm))) {
 
-        resultatListe.add(dagbokinnlegg);
+        resultsList.add(diaryEntry);
       }
     }
 
-    return resultatListe;
+    return resultsList;
 
   }
 
   public void DeleteDiaryEntry(DiaryEntryRegister register, int id) {
-    DiaryEntry dagbokinnleggToRemove = null;
-    for (DiaryEntry dagbokinnlegg : AlleDagbokinnlegg) {
-      if (dagbokinnlegg.getId() == id) {
-        dagbokinnleggToRemove = dagbokinnlegg;
-        System.out.println("Dagbokinnlegg " + id + " har blitt slettet");
+    DiaryEntry diaryEntryToRemove = null;
+    for (DiaryEntry diaryEntry : AllDairyEntries) {
+      if (diaryEntry.getId() == id) {
+        diaryEntryToRemove = diaryEntry;
+        System.out.println("DiaryEntry " + id + " has been deleted");
       }
     }
-    if (dagbokinnleggToRemove != null) {
-      register.AlleDagbokinnlegg.remove(dagbokinnleggToRemove);
+    if (diaryEntryToRemove != null) {
+      register.AllDairyEntries.remove(diaryEntryToRemove);
     } else {
-      System.out.println("Dagbokinnlegg with id: " + id + " not found.");
+      System.out.println("DiaryEntry with id: " + id + " not found.");
     }
   }
 
