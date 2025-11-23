@@ -43,10 +43,11 @@ This project satisfies the functional requirements for both **Level 1** and **Le
 |StdoutConsoulHandler.java, CleanFormatter.java|Custom logging output handlers and formatter.|
 #### Packages:
 All source files are located in:
-**edu.ntnu.idi.idatt**
+[edu.ntnu.idi.idatt](src/main/java/edu/ntnu/idi/idatt/)
 #### JUnit Test Classes:
 The test classes are stored under:
-**src/test/java/edu/ntnu/idi/idatt/**
+[src/test/java/edu/ntnu/idi/idatt/](src/test/java/edu/ntnu/idi/idatt/)
+
 
 **The package includes:**
 |Packages|classes|
@@ -184,6 +185,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
