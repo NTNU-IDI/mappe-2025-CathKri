@@ -75,9 +75,10 @@ https://github.com/NTNU-IDI/mappe-2025-CathKri
 
 #### Ensure is Configured:
 The project uses Maven.
+
 Verify that:
-•	JDK 21 is selected
-•	Maven imports dependencies automatically
+-	JDK 21 is selected
+-	Maven imports dependencies automatically
 
 #### Build the Project:
 From the terminal:
@@ -188,6 +189,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
