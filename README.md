@@ -11,7 +11,7 @@ STUDENT ID = 128744
 
 ## Project description
 This project is a diary application developed as part of the portfolio assignment in **IDATT1003 – Programming 1** at NTNU.
-The application allows users to create, view, search, and delete diary entries. It supports multiple authors, searching by date ranges, searching based on keywords, and generating statistics showing the number of diary entries per author. 
+The application allows users to create, view, search, and delete diary entries. It supports multiple authors, search ranged by the latest post, searching based on keywords, and generating statistics showing the number of diary entries per author. 
 
 ### The solution includes:
 
@@ -74,6 +74,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
