@@ -32,11 +32,29 @@ This project satisfies the functional requirements for both **Level 1** and **Le
 ## Project structure
 
 #### Source Files:
-
+|Files:|Description:|
+|------|------------|
+|Author.java|Entety class that represent an author (firstname, lastname, email).|
+|DiaryEntry.java|Entety class that represent a diary entry with id, author, timestamp, title and content.|
+|AuthorRegister.java|Stores authors and generates statistics such as number of posts per author.|
+|DiaryEntryRegister.java|Stores and manages all diary entries. Supports searching, filtering, and deleting.|
+|DiaryUi.java|Text-based user interface and menu handling.|
+|DiaryApplication.java|Main application launcher.|
+|StdoutConsoulHandler.java, CleanFormatter.java|Custom logging output handlers and formatter.|
 #### Packages:
-
+All source files are located in:
+**edu.ntnu.idi.idatt**
 #### JUnit Test Classes:
+The test classes are stored under:
+**src/test/java/edu/ntnu/idi/idatt/**
 
+Thepackage includes:
+|**Entity classes:**| Author and DiaryEntry|
+|**Register classes:**| AuthorRegister and DieryEntryRegister|
+|**UI and application classes:**| DiaryUi and DiaryApplication|
+|**Utility classes**| StdoutConsoulHandler and cleanFormatter|
+
+This keeps the domain logic and user interface readable and well-organized, and tool components are also kept neatly grouped.
 [//]: # (TODO: Describe the structure of your project here. How have you used packages in your structure. Where are all sourcefiles stored. Where are all JUnit-test classes stored. etc.)
 
 ## Link to repository
@@ -74,6 +92,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
