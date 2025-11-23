@@ -48,7 +48,9 @@ All source files are located in:
 The test classes are stored under:
 **src/test/java/edu/ntnu/idi/idatt/**
 
-Thepackage includes:
+The package includes:
+|Packages|classes|
+|--------|-------|
 |**Entity classes:**| Author and DiaryEntry|
 |**Register classes:**| AuthorRegister and DieryEntryRegister|
 |**UI and application classes:**| DiaryUi and DiaryApplication|
@@ -92,6 +94,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
