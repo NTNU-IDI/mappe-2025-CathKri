@@ -103,7 +103,7 @@ mvn exec:java -Dexec.mainClass="edu.ntnu.idi.idatt.DiaryApplication"
 #### Expected Behavior:
 The main class of the application is:
 
-**edu.ntnu.idi.idatt.DiaryApplication**
+[edu.ntnu.idi.idatt.DiaryApplication](src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java)
 
 This class contains the public static void main(String[] args) method, which starts the program. Inside the main method, an instance of DiaryUi is created, and the methods init() and start() are executed to initialize the application and launch the text-based user interface.
 
@@ -184,6 +184,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
