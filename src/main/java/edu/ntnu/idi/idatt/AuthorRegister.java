@@ -1,34 +1,58 @@
 package edu.ntnu.idi.idatt;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  */
 public class AuthorRegister {
-    private ArrayList<Author> Authors;
+  private ArrayList<Author> AuthorsList;
 
-    public AuthorRegister() {
-        Authors = new ArrayList<Author>();
+  public AuthorRegister() {
+    AuthorsList = new ArrayList<Author>();
+  }
+
+  public ArrayList<Author> getAuthorsList() {
+    return AuthorsList;
+  }
+
+  public void setAuthorsList(ArrayList<Author> authorsList) {
+    this.AuthorsList = authorsList;
+  }
+
+  public Author findAuthor(String firstName, String lastName) {
+    for (Author author : AuthorsList) {
+      if (author.getFirstName().equals(firstName) && author.getLastName().equals(lastName)) {
+        return author;
+      }
     }
+    return null;
+  }
 
-    public ArrayList<Author> getAuthors() {return Authors;}
+  public void addAuthor(Author author) {
+    AuthorsList.add(author);
+  }
 
-    public void setAuthors(ArrayList<Author> authors) {Authors = authors;}
-
-    public void addAuthor(Author author) {Authors.add(author);}
-
-    public void findDiaryEntriesFromSpesificAuthor(){
-
+  /**
+   * @param register register.
+   * @param author author.
+   * @return allDiaryEntries.
+   */
+  public List<DiaryEntry> findAllDiaryEntriesFromAuthor(DiaryEntryRegister register, Author author) {
+    ArrayList<DiaryEntry> DiaryEntryList = register.getAllDiaryEntries();
+    ArrayList<DiaryEntry> allDiaryEntries = new ArrayList<>();
+    for (DiaryEntry DiaryEntry : DiaryEntryList) {
+      if (DiaryEntry.getAuthor().equals(author)) {
+        allDiaryEntries.add(DiaryEntry);
+      }
     }
-    public void findDiaryEntriesBasedOnAWord(){
-    }
-    public void findDiaryEntriesBasedOnAuthor(){
+    return allDiaryEntries;
+  }
 
-    }
-    public int numberOfPostPrAuthor(){
-        return Authors.size();
-    }
+  public int numberOfPostPerAuthor(DiaryEntryRegister register, Author author) {
+    return findAllDiaryEntriesFromAuthor(register, author).size();
+  }
 
-    
+
 }

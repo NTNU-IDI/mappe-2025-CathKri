@@ -1,59 +1,92 @@
 package edu.ntnu.idi.idatt;
 
 import org.junit.jupiter.api.Test;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.time.LocalDateTime;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+/**
+ *
+ */
 class DiaryEntryTest {
+  /**
+   *
+   */
+  @Test
+  void constructorStoresAllValue() {
+    int id = 1;
+    Author forfatter = new Author("Shara","Johansen","Shara@hotmail.com");
+    String tittel = "Day one";
+    String innhold = "To do list";
+    LocalDateTime opprettet = LocalDateTime.now();
 
-    @Test
-    void constructorStoresAllValue() {
-        String authorsName = "Shara";
-        LocalDate date = LocalDate.of(2025, 10, 12);
-        LocalTime time = LocalTime.parse("15:00");
-        String title = "Day one";
-        String content = "To do list";
+
+    DiaryEntry entry = new DiaryEntry(id, forfatter, opprettet, tittel, innhold);
+
+    assertEquals(id, entry.getId());
+    assertEquals(forfatter, entry.getAuthor());
+    assertEquals(tittel, entry.getTitle());
+    assertEquals(innhold, entry.getContent());
+    assertEquals(opprettet, entry.getCreatedAt());
+    assertEquals(opprettet, entry.getLastModifiedAt());
 
 
-        DiaryEntry entry = new DiaryEntry(authorsName, date, time, title, content);
+  }
 
-        assertEquals(authorsName, entry.getAuthorsName());
-        assertEquals(date, entry.getDate());
-        assertEquals(time, entry.getTime());
-        assertEquals(title, entry.getTitle());
-        assertEquals(content, entry.getContent());
+  /**
+   *
+   */
+  @Test
+  void settersUpdateText() {
+    DiaryEntry entry = new DiaryEntry(1, new Author("Shara","Johansen","Shara@hotmail.com"), LocalDateTime.now(), "Title", "Content");
 
-    }
-    @Test
-    void settersUpdateText() {
-        DiaryEntry entry = new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list.");
+    entry.setTitle("New title");
+    entry.setContent("New text");
+    assertEquals("New title", entry.getTitle());
+    assertEquals("New text", entry.getContent());
+  }
 
-        entry.setTitle("New title");
-        entry.setContent("New text");
+  /**
+   *
+   */
+  @Test
+  void constructorRejectsBlankTitle() {
+    int id = 1;
 
-        assertEquals("New title", entry.getTitle());
-        assertEquals("New text", entry.getContent());
-    }
-    @Test
-    void constructorRejectsNullId(){
-        assertThrows(IllegalArgumentException.class, () ->
-                new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list."));
-    }
+    assertThrows(IllegalArgumentException.class, () -> new DiaryEntry(1, new Author("Shara","Johansen","Shara@hotmail.com"), LocalDateTime.now(), null, "content"));
 
-    @Test
-    void constructorRejectsBlankTitle(){
-        int id =1;
+  }
 
-        assertThrows(IllegalArgumentException.class, () ->
-                new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list."));
+  /**
+   *
+   */
+  @Test
+  void setterRejectsBlankContent() {
+    DiaryEntry entry = new DiaryEntry(1, new Author("Shara","Johansen","Shara@hotmail.com"), LocalDateTime.now(), "Title", "");
+    assertThrows(IllegalArgumentException.class, () -> entry.setContent(""));
+  }
 
-    }
-    @Test
-    void setterRejectsBlankContent(){
-        DiaryEntry entry = new DiaryEntry("Shara", LocalDate.parse("2025-11-12"), LocalTime.parse("07:30"), "Plan for det day", "A long to-do list.");
-        assertThrows(IllegalArgumentException.class, () -> entry.setContent(""));
-    }
+  /**
+   *
+   */
+  @Test
+  void constructorRejectsNullCreatedAt() {
+    assertThrows(IllegalArgumentException.class, () -> new DiaryEntry(1, new Author("Shara","Johansen","Shara@hotmail.com"),null, "Title", "content"));
+  }
+
+  /**
+   * checks if the date changes when updating the title.
+   */
+  @Test
+  void changetitleUpdateLastEditedAt() {
+    DiaryEntry entry = new DiaryEntry(1, new Author("Shara","Johansen","Shara@hotmail.com"), LocalDateTime.now(), "Title", "Content");
+
+    LocalDateTime before = entry.getLastModifiedAt();
+    entry.setTitle("New title");
+    LocalDateTime after = LocalDateTime.now();
+    assertEquals(before, after);
+  }
 
 }

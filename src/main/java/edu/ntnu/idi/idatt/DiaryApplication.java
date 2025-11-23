@@ -1,13 +1,15 @@
 package edu.ntnu.idi.idatt;
 
 public class DiaryApplication {
-    public static <DiaryUI> void main(String[] args) {
-        DiaryUI ui = new DiaryUI();
+  public static void main(String[] args) {
+    System.setProperty("java.util.logging.config.file",
+        DiaryApplication.class.getClassLoader()
+            .getResource("logging.properties").getFile());
 
-        ui.init();
-        ui.start();
-    }
-
+    DiaryUi DiaryUI = new DiaryUi();
+    DiaryUI.init();
+    DiaryUI.start();
+  }
 
 
 }

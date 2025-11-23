@@ -1,7 +1,6 @@
 package edu.ntnu.idi.idatt;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 /**
  * This class represents a diary entry.
@@ -12,110 +11,137 @@ import java.time.LocalTime;
  * @version 1.0
  * @since 2025-10-12
  */
+
+/**
+ * private final int id: The id is only set once and does not change
+ * private finale LocalDate date: date are set when creating posts, created once and does not change
+ * private final LocalTime time: time are set when creating posts, created once and does not change
+ * private String title: tile is a tekst.
+ * private String content: content is a tekst.
+ */
 public class DiaryEntry {
+  private final int id;
+  private final Author author;
+  private final LocalDateTime createdAt;
+  private String title;
+  private String content;
+  private LocalDateTime lastModifiedAt;
 
-    private final String authorsName;
-    private final LocalDate date;
-    private final LocalTime time;
-    private String title;
-    private String content;
 
-
-    /**
-     * This is the constructor for diary entry.
-     * It takes the parameters id, title and content.
-     * It also sets the date to today's date.
-     *
-     * @param authorsName      id of the entry (can not be blank)
-     * @param title   title of the entry (can not be blank)
-     * @param content content of the entry (can not be blank)
-     */
-    public DiaryEntry(String authorsName, LocalDate date, LocalTime time, String title, String content) {
-        if (authorsName == null) {
-            throw new IllegalArgumentException("id is missing");
-        }
-        if (title == null) {
-            throw new IllegalArgumentException("title is missing");
-        }
-        if (content == null) {
-            throw new IllegalArgumentException("content is missing");
-        }
-        this.authorsName = authorsName;
-        this.date = date;
-        this.time = time;
-        this.title = title;
-        this.content = content;
+  /**
+   * This is the constructor for diary entry.
+   * It takes the parameters id, title and content.
+   * It also sets the date to today's date.
+   *
+   * @param id        id of the entry (can not be blank)
+   * @param title    title of the entry (can not be blank)
+   * @param content   content of the entry (can not be blank)
+   * @param author author
+   *
+   */
+  public DiaryEntry(int id, Author author, LocalDateTime createdAt, String title, String content) {
+    if (title == null) {
+      throw new IllegalArgumentException("Title are missing");
     }
-
-
-
-    /**
-     * Takes the id of the entry.
-     *
-     * @return Id
-     */
-    public String getAuthorsName() {
-        return authorsName;
+    if (content == null) {
+      throw new IllegalArgumentException("Content are missing");
     }
-
-    /**
-     * Takes the today's date of the entry.
-     *
-     * @return date
-     */
-    public LocalDate getDate() {
-        return date;
+    if (createdAt == null) {
+      throw new IllegalArgumentException("Creation date and time are missing");
     }
+    this.id = id;
+    this.title = title;
+    this.content = content;
+    this.createdAt = createdAt;
+    this.lastModifiedAt = createdAt;
+    this.author = author;
+  }
 
-    /**
-     *
-     * @return time
-     */
-    public LocalTime getTime() {
-        return time;
-    }
 
-    /**
-     * Takes the title of the entry.
-     *
-     * @return title
-     */
-    public String getTitle() {
-        return title;
-    }
+  /**
+   * Finding input id.
+   *
+   * @return Id
+   */
+  public int getId() {
+    return id;
+  }
 
-    /**
-     * Sets the title of the entry.
-     *
-     * @param title
-     * @throws IllegalArgumentException if the title shows blank
-     */
-    public void setTitle(String title) {
-        if (title == null) {
-            throw new IllegalArgumentException("title is null");
-        }
-        this.title = title;
-    }
+  /**
+   * @return formater
+   */
+  public Author getAuthor() {
+    return author;
+  }
 
-    /**
-     * Takes the content of the entry.
-     *
-     * @return content
-     */
-    public String getContent() {
-        return content;
-    }
+  /**
+   * Takes the today's date and time of the entry.
+   *
+   * @return date and time
+   */
+  public LocalDateTime getCreatedAt() {
+    return createdAt;
+  }
 
-    /**
-     * Sets the content of the entry.
-     *
-     * @param content
-     * @throws IllegalArgumentException if the content is blank.
-     */
-    public void setContent(String content) {
-        if (content == null) {
-            throw new IllegalArgumentException("content is null");
-        }
-        this.content = content;
+  public LocalDateTime getLastModifiedAt() {
+    return lastModifiedAt;
+  }
+
+  /**
+   * Takes the title of the entry.
+   *
+   * @return title
+   */
+  public String getTitle() {
+    return title;
+  }
+
+  /**
+   * Sets the title of the entry.
+   *
+   * @param title title
+   * @throws IllegalArgumentException if the title shows blank
+   */
+  public void setTitle(String title) {
+    if (title == null) {
+      throw new IllegalArgumentException("Title can not be null");
     }
+    this.title = title;
+    this.lastModifiedAt = createdAt;
+  }
+
+  /**
+   * Takes the content of the entry.
+   *
+   * @return content
+   */
+  public String getContent() {
+    return content;
+  }
+
+  /**
+   * Sets the content of the entry.
+   *
+   * @param content content
+   * @throws IllegalArgumentException if the content is blank.
+   */
+  public void setContent(String content) {
+    if (content.isEmpty()) {
+      throw new IllegalArgumentException("Content can not be null");
+    }
+    this.content = content;
+    this.lastModifiedAt = LocalDateTime.now();
+  }
+
+  @Override
+  public String toString() {
+    return "DiaryEntry{"
+        + " id=" + id
+        + " , Author=" + author.getFirstName() + " " + author.getLastName()
+        + ", Created at=" + createdAt
+        + ", Title='" + title + '\''
+        + ", Content='" + content + '\''
+        + ", Last modified at=" + lastModifiedAt
+        + '}';
+  }
 }
