@@ -13,19 +13,19 @@ STUDENT ID = 128744
 This project is a diary application developed as part of the portfolio assignment in **IDATT1003 – Programming 1** at NTNU.
 The application allows users to create, view, search, and delete diary entries. It supports multiple authors, searching by date ranges, searching based on keywords, and generating statistics showing the number of diary entries per author. 
 
-###The solution includes:
+### The solution includes:
 
--A text-based user interface
+- A text-based user interface
 
--Core entity classes (DiaryEntry, Author)
+- Core entity classes (DiaryEntry, Author)
 
--Registers for storing entries and authors
+- Registers for storing entries and authors
 
--Exception handling and validation
+- Exception handling and validation
 
--Sorting and filtering functionality
+- Sorting and filtering functionality
 
--Logging using Java’s built-in logging framework
+- Logging using Java’s built-in logging framework
 
 This project satisfies the functional requirements for both Level 1 and Level 2 described in the assignment.
 
@@ -74,6 +74,7 @@ References are included in the project report.
 Or if you have used code from a website or other source, include a link to the source.)
 
 """
+
 
 
 
