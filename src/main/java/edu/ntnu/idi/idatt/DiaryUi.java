@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -167,6 +168,8 @@ public class DiaryUi {
       logger.info("No diary entries found!");
       return;
     }
+    results.sort(Comparator.comparing(DiaryEntry::getCreatedAt).reversed());
+
     String found = "Found " + results.size() + " diary entry(s):";
     logger.info(found);
     for (DiaryEntry diaryEntry : results) {

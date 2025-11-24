@@ -16,14 +16,8 @@ public class DiaryEntryRegister {
   }
 
   public ArrayList<DiaryEntry> getAllDiaryEntries() {
-    return AllDairyEntries;
-  }
 
-  public void findAllRegisteredDiaryEntries() {
-    ArrayList<DiaryEntry> allDairyEntries = this.AllDairyEntries;
-    for (DiaryEntry diaryEntry : allDairyEntries) {
-      System.out.println(diaryEntry.toString());
-    }
+    return AllDairyEntries;
   }
 
   public List<DiaryEntry> findRegisteredDiaryEntriesBasedOnDate(LocalDateTime fromDato, LocalDateTime toDato) {

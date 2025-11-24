@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7b91b3-9861-4567-87bc-83c7387c7ceb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorPostCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorRegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryUi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryUi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorRegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorRegisterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +51,7 @@
     "JUnit.DagbokinnleggTest.executor": "Run",
     "JUnit.DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord.executor": "Run",
     "JUnit.DiaryEntryRegisterTest.addingDagbokinnleggInList.executor": "Run",
+    "JUnit.DiaryEntryRegisterTest.deleteRemoveEntry.executor": "Run",
     "JUnit.DiaryEntryRegisterTest.executor": "Run",
     "JUnit.DiaryEntryRegisterTest.findAndReturnRegisteredDiaryEntryBasedOnDate.executor": "Run",
     "JUnit.DiaryEntryTest.constructorRejectsBlankTitle.executor": "Run",
@@ -80,6 +73,7 @@
     "JUnit.ForfatterTest.settersUpdateTekst.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -110,7 +104,7 @@
       <recent name="edu.ntnu.idi.idatt" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Dagbokapplikasjon">
+  <component name="RunManager" selected="JUnit.DiaryEntryRegisterTest.deleteRemoveEntry">
     <configuration name="Dagbokapplikasjon" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryApplication" />
       <module name="IDATA1003-asty-dagbok" />
@@ -180,7 +174,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryEntryRegisterTest.findAndReturnRegisteredDiaryEntryBasedOnDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryEntryRegisterTest.deleteRemoveEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IDATA1003-asty-dagbok" />
       <extension name="coverage">
         <pattern>
@@ -190,7 +184,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryEntryRegisterTest" />
-      <option name="METHOD_NAME" value="findAndReturnRegisteredDiaryEntryBasedOnDate" />
+      <option name="METHOD_NAME" value="deleteRemoveEntry" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,16 +204,16 @@
       <item itemvalue="JUnit.AuthorRegisterTest" />
       <item itemvalue="JUnit.DiaryEntryRegisterTest" />
       <item itemvalue="JUnit.DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord" />
-      <item itemvalue="JUnit.DiaryEntryRegisterTest.findAndReturnRegisteredDiaryEntryBasedOnDate" />
+      <item itemvalue="JUnit.DiaryEntryRegisterTest.deleteRemoveEntry" />
       <item itemvalue="JUnit.AuthorRegisterTest.finnAuthorInList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DiaryEntryRegisterTest.deleteRemoveEntry" />
         <item itemvalue="JUnit.AuthorRegisterTest" />
         <item itemvalue="JUnit.AuthorRegisterTest.finnAuthorInList" />
         <item itemvalue="JUnit.DiaryEntryRegisterTest" />
         <item itemvalue="JUnit.DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord" />
-        <item itemvalue="JUnit.DiaryEntryRegisterTest.findAndReturnRegisteredDiaryEntryBasedOnDate" />
       </list>
     </recent_temporary>
   </component>

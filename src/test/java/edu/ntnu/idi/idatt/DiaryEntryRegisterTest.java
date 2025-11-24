@@ -3,7 +3,6 @@ package edu.ntnu.idi.idatt;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -68,4 +67,20 @@ class DiaryEntryRegisterTest {
 
 
   }
+  @Test
+  void deleteRemoveEntry() {
+    DiaryEntryRegister DiaryEntryRegister = new DiaryEntryRegister();
+    DiaryEntry entry1 = new DiaryEntry(5, new Author("Shara", "Johansen", "SharaJ@hotmail.com"), LocalDateTime.now().minusDays(5), "title", "tekst");
+    DiaryEntry entry2 = new DiaryEntry(6, new Author("Mike", "Thomsen", "MT@hotmail.com"), LocalDateTime.now().plusDays(5), "title", "tekst");
+
+    DiaryEntryRegister.addDiaryEntry(entry1);
+    DiaryEntryRegister.addDiaryEntry(entry2);
+
+    DiaryEntryRegister.DeleteDiaryEntry(DiaryEntryRegister, 2);
+
+    assertEquals(2, DiaryEntryRegister.getAllDiaryEntries().size());
+    assertFalse(DiaryEntryRegister.getAllDiaryEntries().stream().anyMatch(entry -> entry.getId() == 1));
+
+  }
+
 }
