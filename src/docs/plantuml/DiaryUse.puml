@@ -1,0 +1,28 @@
+@startuml
+
+actor Bruker
+
+rectangle "Diary System" {
+
+    usecase "Add diary entry" as UC1
+    usecase "Find or create author" as UC8
+    usecase "Show all diary entries" as UC2
+    usecase "Search entries\nbetween dates" as UC3
+    usecase "Search entries\nby keyword" as UC5
+    usecase "Delete diary entry" as UC4
+    usecase "View entries\nper author" as UC6
+    usecase "Exit system" as UC7
+}
+
+Bruker --> UC1
+Bruker --> UC2
+Bruker --> UC3
+Bruker --> UC5
+Bruker --> UC4
+Bruker --> UC6
+Bruker --> UC7
+
+' OPTIONAL: include-forhold (pent og riktig UML)
+UC1 --> UC8 : <<include>>
+
+@enduml

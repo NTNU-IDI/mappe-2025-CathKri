@@ -73,7 +73,7 @@ public class AuthorRegister {
 
   public void printAuthorPostList(List<AuthorPostCount> list) {
     System.out.println("Author\t\tPosts");
-    System.out.println("--------------------------");
+    System.out.println(" ");
 
     for (AuthorPostCount item : list) {
       System.out.println(item.author().firstName + " " + item.author().lastName + ": " + "\t\t" + item.postCount());

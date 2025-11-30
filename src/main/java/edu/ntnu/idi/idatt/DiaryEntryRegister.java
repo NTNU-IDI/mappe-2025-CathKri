@@ -3,6 +3,7 @@ package edu.ntnu.idi.idatt;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class DiaryEntryRegister {
   private final ArrayList<DiaryEntry> AllDairyEntries;

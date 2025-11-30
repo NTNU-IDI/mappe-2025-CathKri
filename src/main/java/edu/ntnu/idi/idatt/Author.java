@@ -17,8 +17,8 @@ public class Author {
   }
 
   public void setFirstName(String firstName) {
-    if (firstName == "") {
-      throw new IllegalArgumentException("Firstname can not be null");
+    if (firstName == "" || firstName.isBlank()) {
+      throw new IllegalArgumentException("Firstname can not be blank");
     }
     this.firstName = firstName;
   }
@@ -28,8 +28,8 @@ public class Author {
   }
 
   public void setLastName(String lastName) {
-    if (lastName == "") {
-      throw new IllegalArgumentException("Last name can not be null");
+    if (lastName == "" || lastName.isBlank()) {
+      throw new IllegalArgumentException("Last name can not be blank");
     }
     this.lastName = lastName;
   }
@@ -40,8 +40,8 @@ public class Author {
 
 
   public void setEmail(String email) {
-    if (email == "") {
-      throw new IllegalArgumentException("Email can not be null");
+    if (email == ""  || email.isBlank()) {
+      throw new IllegalArgumentException("Email can not be blank");
     }
     this.email = email;
   }

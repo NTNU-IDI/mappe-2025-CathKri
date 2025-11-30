@@ -1,0 +1,94 @@
+@startuml
+title Klassediagram for dagboksystemet
+
+package "edu.ntnu.idi.idatt" {
+
+  class DiaryApplication {
+    + main(args : String[]) : void
+  }
+
+  class DiaryUi {
+    - logger : Logger
+    - diaryEntryRegister : DiaryEntryRegister
+    - authorRegister : AuthorRegister
+    + init() : void
+    + start() : void
+  }
+
+  class DiaryEntryRegister {
+    - allDiaryEntries : ArrayList<DiaryEntry>
+    + addDiaryEntry(diaryEntry : DiaryEntry) : void
+    + getAllDiaryEntries() : ArrayList<DiaryEntry>
+    + findRegisteredDiaryEntriesBasedOnDate(from : LocalDateTime, to : LocalDateTime) : List<DiaryEntry>
+    + findAllDiaryEntriesBasedOnWord(word : String) : ArrayList<DiaryEntry>
+    + DeleteDiaryEntry(register : DiaryEntryRegister, id : int) : void
+  }
+
+  class AuthorRegister {
+    - authorsList : ArrayList<Author>
+    + getAuthorsList() : ArrayList<Author>
+    + setAuthorsList(authorsList : ArrayList<Author>) : void
+    + findAuthor(firstName : String, lastName : String) : Author
+    + addAuthor(author : Author) : void
+    + findAllDiaryEntriesFromAuthor(register : DiaryEntryRegister, author : Author) : List<DiaryEntry>
+    + createAuthorPostList(register : DiaryEntryRegister, authorRegister : AuthorRegister) : List<AuthorPostCount>
+    + numberOfPostPerAuthor(register : DiaryEntryRegister, author : Author) : int
+    + printAuthorPostList(list : List<AuthorPostCount>) : void
+  }
+
+  class DiaryEntry {
+    - id : int
+    - author : Author
+    - createdAt : LocalDateTime
+    - lastModifiedAt : LocalDateTime
+    - title : String
+    - content : String
+    + getId() : int
+    + getAuthor() : Author
+    + getCreatedAt() : LocalDateTime
+    + getLastModifiedAt() : LocalDateTime
+    + getTitle() : String
+    + setTitle(title : String) : void
+    + getContent() : String
+    + setContent(content : String) : void
+    + toString() : String
+  }
+
+  class Author {
+    - firstName : String
+    - lastName : String
+    - email : String
+    + getFirstName() : String
+    + setFirstName(firstName : String) : void
+    + getLastName() : String
+    + setLastName(lastName : String) : void
+    + getEmail() : String
+    + setEmail(email : String) : void
+  }
+
+  class AuthorPostCount {
+    + author : Author
+    + postCount : int
+  }
+}
+
+' ---------- Relasjoner ----------
+
+' Hovedprogram bruker UI
+DiaryApplication --> DiaryUi
+
+' UI har registre
+DiaryUi --> DiaryEntryRegister
+DiaryUi --> AuthorRegister
+
+' Register -> innhold
+AuthorRegister "1" o-- "*" Author
+DiaryEntryRegister "1" o-- "*" DiaryEntry
+
+' DiaryEntry har én Author
+DiaryEntry "1" --> "1" Author
+
+' AuthorPostCount knyttet til Author
+AuthorPostCount "*" --> "1" Author
+
+@enduml

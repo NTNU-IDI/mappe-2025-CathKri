@@ -1,0 +1,45 @@
+@startuml
+title Sekvensdiagram – Legg til nytt dagbokinnlegg
+
+actor Bruker
+
+Bruker -> DiaryUi: Velger "1. Add new diary entry"
+activate DiaryUi
+
+DiaryUi -> Bruker: Be om id
+Bruker --> DiaryUi: id
+
+DiaryUi -> Bruker: Be om fornavn og etternavn
+Bruker --> DiaryUi: fornavn, etternavn
+
+DiaryUi -> AuthorRegister: findAuthor(fornavn, etternavn)
+activate AuthorRegister
+AuthorRegister --> DiaryUi: Author / null
+deactivate AuthorRegister
+
+alt Forfatter finnes ikke
+    DiaryUi -> Bruker: Be om e-post
+    Bruker --> DiaryUi: e-post
+
+    DiaryUi -> AuthorRegister: addAuthor(new Author)
+    activate AuthorRegister
+    AuthorRegister --> DiaryUi: ny Author
+    deactivate AuthorRegister
+end
+
+DiaryUi -> Bruker: Be om tittel og innhold
+Bruker --> DiaryUi: tittel, innhold
+
+DiaryUi -> DiaryEntry: <<create>> DiaryEntry(id, author, now, tittel, innhold)
+activate DiaryEntry
+deactivate DiaryEntry
+
+DiaryUi -> DiaryEntryRegister: addDiaryEntry(diaryEntry)
+activate DiaryEntryRegister
+DiaryEntryRegister --> DiaryUi: bekreft
+deactivate DiaryEntryRegister
+
+DiaryUi -> Bruker: "Diary entry added"
+deactivate DiaryUi
+
+@enduml

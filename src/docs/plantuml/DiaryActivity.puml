@@ -1,0 +1,33 @@
+@startuml
+start
+
+:Start program;
+:Init diary and author registers\n+ sample data;
+
+repeat
+  :Show menu;
+  :Read choice (1-7);
+
+  if (Choice == 1?) then (yes)
+    :Add new diary entry;
+  elseif (Choice == 2?) then (yes)
+    :Show all diary entries;
+  elseif (Choice == 3?) then (yes)
+    :Search entries\nbetween two dates;
+  elseif (Choice == 4?) then (yes)
+    :Delete diary entry;
+  elseif (Choice == 5?) then (yes)
+    :Search entries\nby keyword;
+  elseif (Choice == 6?) then (yes)
+    :View number of entries\nper author;
+  elseif (Choice == 7?) then (yes)
+    :Show exit message;
+    break
+  else (invalid)
+    :Show error message;
+  endif
+
+repeat while (Choice != 7?)
+
+stop
+@enduml
