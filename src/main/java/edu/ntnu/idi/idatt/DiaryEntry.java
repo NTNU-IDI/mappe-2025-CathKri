@@ -10,9 +10,7 @@ import java.time.LocalDateTime;
  * @author Cathrine Kristiansen
  * @version 1.0
  * @since 2025-10-12
- */
-
-/**
+ *
  * private final int id: The id is only set once and does not change
  * private finale LocalDate date: date are set when creating posts, created once and does not change
  * private final LocalTime time: time are set when creating posts, created once and does not change
@@ -83,6 +81,10 @@ public class DiaryEntry {
     return createdAt;
   }
 
+  /**
+   *
+   * @return
+   */
   public LocalDateTime getLastModifiedAt() {
     return lastModifiedAt;
   }
@@ -133,6 +135,10 @@ public class DiaryEntry {
     this.lastModifiedAt = LocalDateTime.now();
   }
 
+  /**
+   *
+   * @return
+   */
   @Override
   public String toString() {
     return "DiaryEntry{"

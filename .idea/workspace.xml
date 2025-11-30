@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7b91b3-9861-4567-87bc-83c7387c7ceb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/docs/plantuml/DiaryActivity.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/docs/plantuml/DiaryClass.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/docs/plantuml/DiarySequence.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/docs/plantuml/DiaryUse.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorPostCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorPostCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/CleanFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/StdoutConsoleHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logging.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/Author.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorPostCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorPostCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/CleanFormatter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logging.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

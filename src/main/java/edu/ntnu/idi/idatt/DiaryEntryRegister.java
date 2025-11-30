@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 public class DiaryEntryRegister {
   private final ArrayList<DiaryEntry> AllDairyEntries;
 
+  Logger logger = Logger.getLogger(getClass().getName());
+
   public DiaryEntryRegister() {
     AllDairyEntries = new ArrayList();
   }
@@ -65,13 +67,13 @@ public class DiaryEntryRegister {
     for (DiaryEntry diaryEntry : AllDairyEntries) {
       if (diaryEntry.getId() == id) {
         diaryEntryToRemove = diaryEntry;
-        System.out.println("DiaryEntry " + id + " has been deleted");
+        logger.info("DiaryEntry " + id + " has been deleted");
       }
     }
     if (diaryEntryToRemove != null) {
       register.AllDairyEntries.remove(diaryEntryToRemove);
     } else {
-      System.out.println("DiaryEntry with id: " + id + " not found.");
+      logger.info("DiaryEntry with id: " + id + " not found.");
     }
   }
 

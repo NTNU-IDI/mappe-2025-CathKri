@@ -1,7 +1,11 @@
 package edu.ntnu.idi.idatt;
 
+/**
+ *
+ */
 public class DiaryApplication {
   public static void main(String[] args) {
+    System.setErr(System.out);
     System.setProperty("java.util.logging.config.file",
         DiaryApplication.class.getClassLoader()
             .getResource("logging.properties").getFile());
@@ -10,6 +14,4 @@ public class DiaryApplication {
     DiaryUI.init();
     DiaryUI.start();
   }
-
-
 }
