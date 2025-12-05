@@ -5,41 +5,45 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /**
- *
+ * Represents a register for managing {@link Author} objects.
+ * This class provides functionality for storing authors, searching for authors,
+ * and generating statistics about diary entries written by each author.
  */
 public class AuthorRegister {
+  Logger logger = Logger.getLogger(getClass().getName());
   private ArrayList<Author> AuthorsList;
 
-  Logger logger = Logger.getLogger(getClass().getName());
-
   /**
-   *
+   * Creates a new, empty author register.
    */
   public AuthorRegister() {
     AuthorsList = new ArrayList<Author>();
   }
 
   /**
+   * Returns the list of all registered authors.
    *
-   * @return
+   * @return a list containing all authors in the register
    */
   public ArrayList<Author> getAuthorsList() {
     return AuthorsList;
   }
 
   /**
+   * Replaces the current list of authors with a new list.
    *
-   * @param authorsList
+   * @param authorsList the new list of authors
    */
   public void setAuthorsList(ArrayList<Author> authorsList) {
     this.AuthorsList = authorsList;
   }
 
   /**
+   * Finds an author based on first and last name.
    *
-   * @param firstName
-   * @param lastName
-   * @return
+   * @param firstName the author's first name
+   * @param lastName  the author's last name
+   * @return the matching {@link Author}, or {@code null} if not found
    */
   public Author findAuthor(String firstName, String lastName) {
     for (Author author : AuthorsList) {
@@ -51,17 +55,20 @@ public class AuthorRegister {
   }
 
   /**
+   * Adds a new author to the register.
    *
-   * @param author
+   * @param author the author to add
    */
   public void addAuthor(Author author) {
     AuthorsList.add(author);
   }
 
   /**
-   * @param register register.
-   * @param author   author.
-   * @return allDiaryEntries.
+   * Returns all diary entries written by a specific author.
+   *
+   * @param register the diary entry register to search in
+   * @param author   the author whose entries should be retrieved
+   * @return a list of all diary entries belonging to the given author
    */
   public List<DiaryEntry> findAllDiaryEntriesFromAuthor(DiaryEntryRegister register, Author author) {
     ArrayList<DiaryEntry> DiaryEntryList = register.getAllDiaryEntries();
@@ -73,12 +80,15 @@ public class AuthorRegister {
     }
     return allDiaryEntries;
   }
+  // NOTE: The implementation of createAuthorPostList was developed with assistance from ChatGPT.
+  // The logic was reviewed and integrated into the project by the author.
 
   /**
+   * Creates a list showing how many posts each author has written.
    *
-   * @param register
-   * @param authorRegister
-   * @return
+   * @param register       the diary entry register containing entries
+   * @param authorRegister the register containing authors
+   * @return a list of {@link AuthorPostCount} describing posts per author
    */
   public List<AuthorPostCount> createAuthorPostList(DiaryEntryRegister register, AuthorRegister authorRegister) {
     List<AuthorPostCount> list = new ArrayList<>();
@@ -92,10 +102,11 @@ public class AuthorRegister {
   }
 
   /**
+   * Counts how many diary entries a specific author has written.
    *
-   * @param register
-   * @param author
-   * @return
+   * @param register the diary entry register to search in
+   * @param author   the author whose posts should be counted
+   * @return the number of diary entries written by the author
    */
   public int numberOfPostPerAuthor(DiaryEntryRegister register, Author author) {
     int count = 0;
@@ -108,15 +119,16 @@ public class AuthorRegister {
   }
 
   /**
+   * Prints a list of authors and their associated post counts using the logger.
    *
-   * @param list
+   * @param list a list of {@link AuthorPostCount} records
    */
   public void printAuthorPostList(List<AuthorPostCount> list) {
     logger.info("Author\t\tPosts");
     logger.info(" ");
 
     for (AuthorPostCount item : list) {
-      logger.info(item.author().firstName + " " + item.author().lastName + ": " + "\t\t" + item.postCount());
+      logger.info(item.author().getFirstName() + " " + item.author().getLastName() + ": " + "\t\t" + item.postCount());
     }
   }
 }

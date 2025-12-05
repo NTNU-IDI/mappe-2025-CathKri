@@ -1,21 +1,17 @@
 package edu.ntnu.idi.idatt;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * This class represents a diary entry.
  * It holds the information from a client day by day.
- * It asks for the id, date, title and content.
+ * It asks for the id, author, create timestamps, title and content.
+ * The entry also stores the last time it was modified.
  *
  * @author Cathrine Kristiansen
- * @version 1.0
+ * @version 6.0
  * @since 2025-10-12
- *
- * private final int id: The id is only set once and does not change
- * private finale LocalDate date: date are set when creating posts, created once and does not change
- * private final LocalTime time: time are set when creating posts, created once and does not change
- * private String title: tile is a tekst.
- * private String content: content is a tekst.
  */
 public class DiaryEntry {
   private final int id;
@@ -27,21 +23,21 @@ public class DiaryEntry {
 
 
   /**
-   * This is the constructor for diary entry.
-   * It takes the parameters id, title and content.
-   * It also sets the date to today's date.
+   * Creates a new diary entry with the given parameters.
    *
-   * @param id        id of the entry (can not be blank)
-   * @param title    title of the entry (can not be blank)
-   * @param content   content of the entry (can not be blank)
-   * @param author author
+   * @param id         the unique ID of the entry
+   * @param author     the author who created the entry
+   * @param createdAt  the timestamp when the entry was created (can not be null)
+   * @param title      the title of the entry (can not be blank)
+   * @param content    the content of the entry (can not be blank)
    *
+   * @throws IllegalArgumentException if title, content, or createdAt is blank or null.
    */
   public DiaryEntry(int id, Author author, LocalDateTime createdAt, String title, String content) {
-    if (title == null) {
+    if (Objects.equals(title, "")) {
       throw new IllegalArgumentException("Title are missing");
     }
-    if (content == null) {
+    if (Objects.equals(content, "")) {
       throw new IllegalArgumentException("Content are missing");
     }
     if (createdAt == null) {
@@ -57,56 +53,59 @@ public class DiaryEntry {
 
 
   /**
-   * Finding input id.
+   * Returns the ID of this diary entry.
    *
-   * @return Id
+   * @return the entry ID
    */
   public int getId() {
     return id;
   }
 
   /**
-   * @return formater
+   * Returns the author who created the diary entry.
+   *
+   * @return the author of the entry
    */
   public Author getAuthor() {
     return author;
   }
 
   /**
-   * Takes the today's date and time of the entry.
+   * Returns the timestamp when the entry was created.
    *
-   * @return date and time
+   * @return the creation date and time
    */
   public LocalDateTime getCreatedAt() {
     return createdAt;
   }
 
   /**
+   * Returns the timestamp when the entry was last modified.
    *
-   * @return
+   * @return the last modification timestamp
    */
   public LocalDateTime getLastModifiedAt() {
     return lastModifiedAt;
   }
 
   /**
-   * Takes the title of the entry.
+   * Returns the title of the diary entry.
    *
-   * @return title
+   * @return the title text
    */
   public String getTitle() {
     return title;
   }
 
   /**
-   * Sets the title of the entry.
+   * Updates the title of the diary entry.
    *
-   * @param title title
-   * @throws IllegalArgumentException if the title shows blank
+   * @param title the new title
+   * @throws IllegalArgumentException if the title is blank.
    */
   public void setTitle(String title) {
-    if (title == null) {
-      throw new IllegalArgumentException("Title can not be null");
+    if (Objects.equals(title, "")) {
+      throw new IllegalArgumentException("Title can not be blank");
     }
     this.title = title;
     this.lastModifiedAt = createdAt;
@@ -125,19 +124,21 @@ public class DiaryEntry {
    * Sets the content of the entry.
    *
    * @param content content
-   * @throws IllegalArgumentException if the content is blank.
+   * @throws IllegalArgumentException if the content is empty.
    */
   public void setContent(String content) {
     if (content.isEmpty()) {
-      throw new IllegalArgumentException("Content can not be null");
+      throw new IllegalArgumentException("Content can not be empty");
     }
     this.content = content;
     this.lastModifiedAt = LocalDateTime.now();
   }
 
   /**
+   * Returns a formatted string representation of the diary entry,
+   * including ID, author name, timestamps, title, and content.
    *
-   * @return
+   * @return a string describing this diary entry
    */
   @Override
   public String toString() {

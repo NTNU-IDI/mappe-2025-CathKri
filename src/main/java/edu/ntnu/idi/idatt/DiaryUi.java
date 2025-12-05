@@ -11,7 +11,20 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 /**
- * Diary entry UI class.
+ * Provides a console-based user interface for interacting with the diary application.
+ * This class handles all user interaction, including:
+ * <ul>
+ *   <li>Registering new diary entries</li>
+ *   <li>Searching for entries based on date or keywords</li>
+ *   <li>Listing all diary entries</li>
+ *   <li>Deleting entries</li>
+ *   <li>Displaying the number of posts per author</li>
+ * </ul>
+ * The class communicates with {@link DiaryEntryRegister} and {@link AuthorRegister}
+ * to perform operations, while logging output using {@link java.util.logging.Logger}.
+ *
+ * Note: This class mixes input handling, validation and control flow,
+ * and therefore acts as both UI and controller in this version of the system.
  */
 @SuppressWarnings("checkstyle:LineLength")
 public class DiaryUi {
@@ -20,6 +33,14 @@ public class DiaryUi {
   DiaryEntryRegister diaryEntryRegister;
   AuthorRegister authorRegister;
 
+  /**
+   * Creates and registers a new diary entry.
+   * Prompts the user for ID, title, content and author information.
+   *
+   * @param register       the diary entry register used to store the entry
+   * @param AuthorRegister the author register used for finding or creating authors
+   * @param scanner        the scanner used to read user input
+   */
   private void addDiaryEntry(DiaryEntryRegister register, AuthorRegister AuthorRegister, Scanner scanner) {
     logger.info("Register new diary entry: ");
     logger.info("Id number: ");
@@ -32,6 +53,7 @@ public class DiaryUi {
       logger.info("Invalid input: " + exception.getMessage());
       return;
     }
+
 
     final Author author = findOrCreateAuthor(AuthorRegister);
 
@@ -49,11 +71,23 @@ public class DiaryUi {
     logger.info("Diary entry added!");
   }
 
+  /**
+   * Displays all registered diary entries in the system.
+   *
+   * @param register the diary register to retrieve entries from
+   */
   private void findRegisteredDiaryEntry(DiaryEntryRegister register) {
     logger.info("Find all recorded diary entries: ");
     printResults(register.getAllDiaryEntries());
   }
 
+  /**
+   * Finds an existing author or creates a new one if not found.
+   * Prompts the user for first name, last name, and optionally email.
+   *
+   * @param authorRegister the register containing authors
+   * @return the found or newly created author
+   */
   private Author findOrCreateAuthor(AuthorRegister authorRegister) {
     logger.info("Find author from the list or create new author: ");
 
@@ -79,6 +113,13 @@ public class DiaryUi {
     }
   }
 
+  /**
+   * Searches for diary entries within a given date range.
+   * Prompts the user for from/to dates in yyyyMMdd format.
+   *
+   * @param register the diary entry register
+   * @param scanner  the scanner used for input
+   */
   private void findRegisteredDiaryEntryBetweendates(DiaryEntryRegister register, Scanner scanner) {
     logger.info("Find diary entries by date:\n");
 
@@ -107,10 +148,10 @@ public class DiaryUi {
   }
 
   /**
-   * Find all diary entries.
+   * Searches for diary entries that contain a given keyword in either title or content.
    *
-   * @param register diary registry
-   * @param scanner  scanner
+   * @param register the diary entry register
+   * @param scanner  scanner used to read search term
    */
   public void findAllDiaryEntriesBasedOnWord(DiaryEntryRegister register, Scanner scanner) {
     logger.info("Enter a word to search for: ");
@@ -136,10 +177,10 @@ public class DiaryUi {
   }
 
   /**
-   * Number of diaries per author.
+   * Displays the number of diary posts created by each author.
    *
-   * @param diaryEntryRegister       diaryEntryRegister
-   * @param authorRegister authorRegister
+   * @param diaryEntryRegister the diary register
+   * @param authorRegister     the author register
    */
   public void numberOfPostPerAuthor(DiaryEntryRegister diaryEntryRegister, AuthorRegister authorRegister) {
     logger.info("Number of posts per author: ");
@@ -147,6 +188,12 @@ public class DiaryUi {
     authorRegister.printAuthorPostList(authorPostCounts);
   }
 
+  /**
+   * Deletes a diary entry based on its ID.
+   *
+   * @param register the register containing entries
+   * @param scanner  scanner used to read ID
+   */
   private void DeleteDiaryEntry(DiaryEntryRegister register, Scanner scanner) {
     logger.info("Delete diary Entry: ");
     logger.info("Id number: ");
@@ -163,6 +210,11 @@ public class DiaryUi {
     register.DeleteDiaryEntry(register, id);
   }
 
+  /**
+   * Prints a list of diary entries in descending order by creation date.
+   *
+   * @param results the list of diary entries
+   */
   private void printResults(List<DiaryEntry> results) {
     if (results == null || results.isEmpty()) {
       logger.info("No diary entries found!");
@@ -179,7 +231,7 @@ public class DiaryUi {
   }
 
   /**
-   * init.
+   * Initializes the diary application by creating registers and preparing logging.
    */
   public void init() {
     diaryEntryRegister = new DiaryEntryRegister();
@@ -188,7 +240,8 @@ public class DiaryUi {
   }
 
   /**
-   * start.
+   * Starts the UI loop and displays a menu until the user exits.
+   * Also loads example data at startup.
    */
   public void start() {
     Author shara = new Author("Shara", "Johansen", "sara@hotmail.com");
@@ -253,6 +306,9 @@ public class DiaryUi {
 
   }
 
+  /**
+   * Prints the main menu options for the user.
+   */
   private void printMenu() {
     logger.info("\n DIARY ENTRY MENU");
     logger.info("1. Add new diary entry");
@@ -266,9 +322,9 @@ public class DiaryUi {
   }
 
   /**
-   * prints the details for the entry.
+   * Prints the detailed information of a single diary entry.
    *
-   * @param entry entry
+   * @param entry the diary entry to print
    */
   private void printDiaryEntry(DiaryEntry entry) {
     logger.info("Id: " + entry.getId());
