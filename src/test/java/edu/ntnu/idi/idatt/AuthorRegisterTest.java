@@ -7,25 +7,51 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for {@link AuthorRegister}.
+ * <p>
+ * This class contains unit tests verifying core functionality of the
+ * AuthorRegister component, including:
+ * <ul>
+ *     <li>Initialization of the internal author list</li>
+ *     <li>Setter behavior for the author list</li>
+ *     <li>Adding authors to the register</li>
+ *     <li>Retrieving entries associated with a specific author</li>
+ *     <li>Counting diary entries per author</li>
+ * </ul>
+ * <p>
+ * The tests use JUnit 5 assertions to validate expected outcomes.
+ */
 class AuthorRegisterTest {
 
+  /**
+   * Verifies that the constructor initializes an empty author list.
+   */
   @Test
-  void constructorInitializesEmtyList() {
+  void constructor_whenCalled_initializesEmptyAuthorList() {
     AuthorRegister authorRegister = new AuthorRegister();
     assertNotNull(authorRegister.getAuthorsList());
     assertTrue(authorRegister.getAuthorsList().isEmpty());
   }
 
+  /**
+   * Tests that the setter allows the internal author list to be replaced.
+   * In this case, verifies that setting it to null is accepted.
+   */
   @Test
-  void settersShowsAuthorList() {
+  void setAuthorsList_whenSetToNull_listBecomesNull() {
     AuthorRegister authorRegister = new AuthorRegister();
     authorRegister.setAuthorsList(null);
 
     assertNull(authorRegister.getAuthorsList());
   }
 
+  /**
+   * Ensures that authors added to the register are correctly stored.
+   * Adds two authors and checks that the list size increases accordingly.
+   */
   @Test
-  void finnAuthorInList() {
+  void addAuthor_whenAuthorsAdded_listContainsAllAuthors() {
     AuthorRegister authorRegister = new AuthorRegister();
     Author nr1 = new Author("Shara", "Johansen", "SharaJ@hotmail.com");
     Author nr2 = new Author("Tom", "Eriksen", "tom@hotmail.com");
@@ -34,17 +60,24 @@ class AuthorRegisterTest {
 
     assertEquals(2, authorRegister.getAuthorsList().size());
   }
-
+  /**
+   * Tests adding a null author to the register.
+   * The current implementation still inserts the value,
+   * therefore the list should not remain empty.
+   */
   @Test
-  void addingAuthorInList() {
+  void addAuthor_whenNullAuthorAdded_listStillUpdates() {
     AuthorRegister authorRegister = new AuthorRegister();
     authorRegister.addAuthor(null);
 
     assertFalse(authorRegister.getAuthorsList().isEmpty());
   }
-
+  /**
+   * Verifies that the register correctly returns all diary entries
+   * matching a specific author.
+   */
   @Test
-  void findAndReturnAllDiaryEntrysFromAuthorInList() {
+  void findAllDiaryEntriesFromAuthor_whenEntriesExist_returnsMatchingEntries() {
     DiaryEntryRegister diaryEntryRegister = new DiaryEntryRegister();
     Author author1 = new Author("Tom", "Jones", "TJ@hotmail.com");
     Author author2 = new Author("Finn", "Finnsnes", "FF@hotmail.com");
@@ -64,8 +97,12 @@ class AuthorRegisterTest {
     assertEquals(2, number.size());
   }
 
+  /**
+   * Tests that the correct number of diary entries is counted per author.
+   * One author has two entries, the other has one.
+   */
   @Test
-  void ReturnRightNumberOfDiaryEntriesPerAuthor() {
+  void numberOfEntriesPerAuthor_whenMultipleAuthors_returnsCorrectCounts() {
     Author author1 = new Author("Tom", "Jones", "TJ@hotmail.com");
     Author author2 = new Author("Finn", "Finnsnes", "FF@hotmail.com");
     DiaryEntry entry1 = new DiaryEntry(5, author1, LocalDateTime.now(), "title", "tekst");

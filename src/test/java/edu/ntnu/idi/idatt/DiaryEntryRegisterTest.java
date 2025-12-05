@@ -1,29 +1,54 @@
 package edu.ntnu.idi.idatt;
 
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for {@link DiaryEntryRegister}.
+ * <p>
+ * This class verifies core functionality of the DiaryEntryRegister component, including:
+ * <ul>
+ *     <li>Initialization of the internal diary entry list</li>
+ *     <li>Adding diary entries, including null handling</li>
+ *     <li>Searching for diary entries containing a specific word in their text</li>
+ *     <li>Searching for diary entries within a specific date range</li>
+ *     <li>Deleting diary entries based on entry ID</li>
+ * </ul>
+ * <p>
+ * Assertions from JUnit 5 are used to validate expected behavior.
+ */
 class DiaryEntryRegisterTest {
 
+  /**
+   * Verifies that the constructor initializes an empty list of diary entries.
+   */
   @Test
-  void constructorInitializesEmtyList() {
+  void whenListIsEmty_constructorInitializesEmtyList() {
     DiaryEntryRegister register = new DiaryEntryRegister();
     assertNotNull(register.getAllDiaryEntries());
     assertTrue(register.getAllDiaryEntries().isEmpty());
   }
 
+  /**
+   * Tests that adding a null value diary entry, still results in the internal list being updated.
+   * Current implementation accepts and stores null entries.
+   */
   @Test
-  void addingDiaryEntryInList() {
+  void whenAddingNull_StillAddingDiaryEntryInList() {
     DiaryEntryRegister register = new DiaryEntryRegister();
     register.addDiaryEntry(null);
 
     assertFalse(register.getAllDiaryEntries().isEmpty());
   }
 
+  /**
+   * Ensures that the register correctly returns all diary entries containing a specific word
+   * in their text content.
+   * <p>
+   * Only entries where the body text contains the searched word should be returned.
+   */
   @Test
   void FindAndReturnRegisteredDiaryEntryBasedOnWord() {
     DiaryEntryRegister register = new DiaryEntryRegister();
@@ -43,6 +68,12 @@ class DiaryEntryRegisterTest {
     assertFalse(results.contains(Entry3));
   }
 
+  /**
+   * Ensures that the register correctly returns all diary entries containing a specific word
+   * in their text content.
+   * <p>
+   * Only entries where the body text contains the searched word should be returned.
+   */
   @Test
   void findAndReturnRegisteredDiaryEntryBasedOnDate() {
     DiaryEntryRegister register = new DiaryEntryRegister();
@@ -65,8 +96,13 @@ class DiaryEntryRegisterTest {
     assertTrue(results.contains(entry2));
     assertFalse(results.contains(entry3));
 
-
   }
+
+  /**
+   * Tests that deleting a diary entry by ID removes the correct entry from the register.
+   * <p>
+   * Ensures that entries not matching the ID remain in the list.
+   */
   @Test
   void deleteRemoveEntry() {
     DiaryEntryRegister DiaryEntryRegister = new DiaryEntryRegister();

@@ -22,9 +22,9 @@ import java.util.logging.Logger;
  * </ul>
  * The class communicates with {@link DiaryEntryRegister} and {@link AuthorRegister}
  * to perform operations, while logging output using {@link java.util.logging.Logger}.
- *
+ * <p>
  * Note: This class mixes input handling, validation and control flow,
- * and therefore acts as both UI and controller in this version of the system.
+ * and therefore acts as both UI and controller in this version of the system.</p>
  */
 @SuppressWarnings("checkstyle:LineLength")
 public class DiaryUi {
@@ -113,12 +113,17 @@ public class DiaryUi {
     }
   }
 
+
   /**
    * Searches for diary entries within a given date range.
    * Prompts the user for from/to dates in yyyyMMdd format.
    *
    * @param register the diary entry register
    * @param scanner  the scanner used for input
+   *
+   * <p><b> NOTE: </b> Parts of the implementation of
+   * {@code findRegisteredDiaryEntryBetweendates} was developed with assistance from ChatGPT.
+   *  The logic was reviewed and integrated into the project by the author.</p>
    */
   private void findRegisteredDiaryEntryBetweendates(DiaryEntryRegister register, Scanner scanner) {
     logger.info("Find diary entries by date:\n");

@@ -80,8 +80,7 @@ public class AuthorRegister {
     }
     return allDiaryEntries;
   }
-  // NOTE: The implementation of createAuthorPostList was developed with assistance from ChatGPT.
-  // The logic was reviewed and integrated into the project by the author.
+
 
   /**
    * Creates a list showing how many posts each author has written.
@@ -89,6 +88,10 @@ public class AuthorRegister {
    * @param register       the diary entry register containing entries
    * @param authorRegister the register containing authors
    * @return a list of {@link AuthorPostCount} describing posts per author
+   *
+   * <p><b> NOTE: </b> The implementation of
+   * {@code createAuthorPostList} was developed with assistance from ChatGPT.
+   * The logic was reviewed and integrated into the project by the author.</p>
    */
   public List<AuthorPostCount> createAuthorPostList(DiaryEntryRegister register, AuthorRegister authorRegister) {
     List<AuthorPostCount> list = new ArrayList<>();

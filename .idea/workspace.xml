@@ -6,13 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="fb7b91b3-9861-4567-87bc-83c7387c7ceb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorPostCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorPostCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorRegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/Author.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorPostCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorPostCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,63 +51,64 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Dagbokapplikasjon.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DiaryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Sequence&quot;,
-    &quot;JUnit.AuthorRegisterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorRegisterTest.finnAuthorInList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DagbokinnleggRegisterTest.addingDagbokinnleggInList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DagbokinnleggRegisterTest.constructorInitializesEmtyList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DagbokinnleggTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryRegisterTest.addingDagbokinnleggInList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryRegisterTest.deleteRemoveEntry.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryRegisterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryRegisterTest.findAndReturnRegisteredDiaryEntryBasedOnDate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryTest.constructorRejectsBlankTitle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryTest.constructorRejectsNullCreatedAt.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryTest.constructorStoresAllValue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DiaryEntryTest.setterRejectsBlankContent.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterRegisterTest.ReturnerRiktigAntallInnleggPerForfatter.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterRegisterTest.ReturnerRiktigAntallInnleggPerForfstter.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterRegisterTest.addingForfatterInList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterRegisterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterRegisterTest.findAndReturnAllDiaryEntrysFromAuthorInList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterRegisterTest.finnForfatterInList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterRegisterTest.settersShowsForfatterList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterTest.setterRejectsBlankEmail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterTest.setterRejectsBlankEtternavn.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterTest.setterRejectsBlankFornavn.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ForfatterTest.settersUpdateTekst.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Cathrine/Desktop/mappekrav/mappe-2025-CathKri&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Dagbokapplikasjon.executor": "Run",
+    "Application.DiaryApplication.executor": "Run",
+    "DefaultPlantUmlFileTemplate": "UML Sequence",
+    "JUnit.AuthorRegisterTest.executor": "Run",
+    "JUnit.AuthorRegisterTest.finnAuthorInList.executor": "Run",
+    "JUnit.DagbokinnleggRegisterTest.addingDagbokinnleggInList.executor": "Run",
+    "JUnit.DagbokinnleggRegisterTest.constructorInitializesEmtyList.executor": "Run",
+    "JUnit.DagbokinnleggTest.executor": "Run",
+    "JUnit.DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord.executor": "Run",
+    "JUnit.DiaryEntryRegisterTest.addingDagbokinnleggInList.executor": "Run",
+    "JUnit.DiaryEntryRegisterTest.deleteRemoveEntry.executor": "Run",
+    "JUnit.DiaryEntryRegisterTest.executor": "Run",
+    "JUnit.DiaryEntryRegisterTest.findAndReturnRegisteredDiaryEntryBasedOnDate.executor": "Run",
+    "JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList.executor": "Run",
+    "JUnit.DiaryEntryTest.constructorRejectsBlankTitle.executor": "Run",
+    "JUnit.DiaryEntryTest.constructorRejectsNullCreatedAt.executor": "Run",
+    "JUnit.DiaryEntryTest.constructorStoresAllValue.executor": "Run",
+    "JUnit.DiaryEntryTest.executor": "Run",
+    "JUnit.DiaryEntryTest.setterRejectsBlankContent.executor": "Run",
+    "JUnit.ForfatterRegisterTest.ReturnerRiktigAntallInnleggPerForfatter.executor": "Run",
+    "JUnit.ForfatterRegisterTest.ReturnerRiktigAntallInnleggPerForfstter.executor": "Run",
+    "JUnit.ForfatterRegisterTest.addingForfatterInList.executor": "Run",
+    "JUnit.ForfatterRegisterTest.executor": "Run",
+    "JUnit.ForfatterRegisterTest.findAndReturnAllDiaryEntrysFromAuthorInList.executor": "Run",
+    "JUnit.ForfatterRegisterTest.finnForfatterInList.executor": "Run",
+    "JUnit.ForfatterRegisterTest.settersShowsForfatterList.executor": "Run",
+    "JUnit.ForfatterTest.executor": "Run",
+    "JUnit.ForfatterTest.setterRejectsBlankEmail.executor": "Run",
+    "JUnit.ForfatterTest.setterRejectsBlankEtternavn.executor": "Run",
+    "JUnit.ForfatterTest.setterRejectsBlankFornavn.executor": "Run",
+    "JUnit.ForfatterTest.settersUpdateTekst.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Cathrine/Desktop/mappekrav/mappe-2025-CathKri",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -111,7 +117,7 @@
       <recent name="edu.ntnu.idi.idatt" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Dagbokapplikasjon">
+  <component name="RunManager" selected="JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList">
     <configuration name="Dagbokapplikasjon" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryApplication" />
       <module name="IDATA1003-asty-dagbok" />
@@ -165,22 +171,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IDATA1003-asty-dagbok" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idi.idatt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryEntryRegisterTest" />
-      <option name="METHOD_NAME" value="FindAndReturnRegisteredDiaryEntryBasedOnWord" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DiaryEntryRegisterTest.deleteRemoveEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IDATA1003-asty-dagbok" />
       <extension name="coverage">
@@ -197,6 +187,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IDATA1003-asty-dagbok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idi.idatt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryEntryRegisterTest" />
+      <option name="METHOD_NAME" value="whenAddingNull_StillAddingDiaryEntryInList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,19 +214,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Dagbokapplikasjon" />
+      <item itemvalue="JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList" />
       <item itemvalue="JUnit.AuthorRegisterTest" />
       <item itemvalue="JUnit.DiaryEntryRegisterTest" />
-      <item itemvalue="JUnit.DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord" />
       <item itemvalue="JUnit.DiaryEntryRegisterTest.deleteRemoveEntry" />
       <item itemvalue="JUnit.AuthorRegisterTest.finnAuthorInList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList" />
         <item itemvalue="JUnit.DiaryEntryRegisterTest.deleteRemoveEntry" />
         <item itemvalue="JUnit.AuthorRegisterTest" />
         <item itemvalue="JUnit.AuthorRegisterTest.finnAuthorInList" />
         <item itemvalue="JUnit.DiaryEntryRegisterTest" />
-        <item itemvalue="JUnit.DiaryEntryRegisterTest.FindAndReturnRegisteredDiaryEntryBasedOnWord" />
       </list>
     </recent_temporary>
   </component>
