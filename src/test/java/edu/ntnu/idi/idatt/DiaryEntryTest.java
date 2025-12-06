@@ -70,7 +70,7 @@ class DiaryEntryTest {
     LocalDateTime now = LocalDateTime.now();
 
     Assertions.assertThrows(IllegalArgumentException.class, () ->
-        new DiaryEntry(1, author, now, null, "content"));
+        new DiaryEntry(1, author, now, "", "content"));
 
   }
 
@@ -83,7 +83,7 @@ class DiaryEntryTest {
 
     DiaryEntry entry = new DiaryEntry(1, new Author(
         "Shara", "Johansen", "Shara@hotmail.com"),
-        LocalDateTime.now(), "Title", "");
+        LocalDateTime.now(), "Title", "Content");
 
     Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setContent(""));
   }

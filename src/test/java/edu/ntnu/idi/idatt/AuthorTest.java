@@ -54,7 +54,7 @@ class AuthorTest {
    */
   @Test
   void whenSettingBlankFirstName_setFirstNameShouldRejectBlankValue() {
-    Author entry = new Author("", "Johansen", "SharaJ@hotmail.com");
+    Author entry = new Author("Shara", "Johansen", "SharaJ@hotmail.com");
     Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setFirstName(""));
   }
 
@@ -63,7 +63,7 @@ class AuthorTest {
    */
   @Test
   void whenSettingBlankLastName_setLastNameShouldRejectBlankValue() {
-    Author entry = new Author("", "Johansen", "SharaJ@hotmail.com");
+    Author entry = new Author("Shara", "Johansen", "SharaJ@hotmail.com");
     Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setLastName(""));
   }
 
@@ -72,7 +72,9 @@ class AuthorTest {
    */
   @Test
   void whenSettingBlankEmail_setEmailShouldRejectBlankValue() {
-    Author entry = new Author("", "Johansen", "SharaJ@hotmail.com");
-    Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setEmail(""));
+    Author entry = new Author("Shara", "Johansen", "valid@email.com");
+
+    Assertions.assertThrows(IllegalArgumentException.class,
+        () -> entry.setEmail(""));
   }
 }
