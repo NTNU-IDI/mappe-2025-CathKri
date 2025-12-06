@@ -1,4 +1,4 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.model;
 
 /**
  * Represents a data pair containing an author and the number of posts

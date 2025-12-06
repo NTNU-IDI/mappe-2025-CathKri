@@ -42,19 +42,15 @@ This project satisfies the functional requirements for both **Level 1** and **Le
 |DiaryApplication.java|Main application launcher.|
 
 ### Packages:
-All source files are located in:
-[edu.ntnu.idi.idatt](src/main/java/edu/ntnu/idi/idatt/)
+- `edu.ntnu.idi.idatt` → application entry point `DiaryApplication`
+- `edu.ntnu.idi.idatt.model` → entity/data classes: `Author`, `DiaryEntry`, `AuthorPostCount`
+- `edu.ntnu.idi.idatt.register` → registers: `AuthorRegister`, `DiaryEntryRegister`
+- `edu.ntnu.idi.idatt.ui` → console UI/controller: `DiaryUi`
+
 ### JUnit Test Classes:
-The test classes are stored under:
-[src/test/java/edu/ntnu/idi/idatt/](src/test/java/edu/ntnu/idi/idatt/)
-
-
-**The package includes:**
-|Packages|classes|
-|--------|-------|
-|**Entity classes:**| Author and DiaryEntry|
-|**Register classes:**| AuthorRegister and DieryEntryRegister|
-|**UI and application classes:**| DiaryUi and DiaryApplication|
+Test packages mirror the main source structure:
+- `src/test/java/edu/ntnu/idi/idatt/model/`
+- `src/test/java/edu/ntnu/idi/idatt/register/`
 
 This keeps the domain logic and user interface readable and well-organized, and tool components are also kept neatly grouped.
 

@@ -1,4 +1,4 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.model;
 
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Assertions;

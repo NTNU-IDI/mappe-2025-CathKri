@@ -1,5 +1,6 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.register;
 
+import edu.ntnu.idi.idatt.model.DiaryEntry;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

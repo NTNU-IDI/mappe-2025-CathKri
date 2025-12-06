@@ -1,5 +1,6 @@
 package edu.ntnu.idi.idatt;
 
+import edu.ntnu.idi.idatt.ui.DiaryUi;
 import java.util.Objects;
 
 /**

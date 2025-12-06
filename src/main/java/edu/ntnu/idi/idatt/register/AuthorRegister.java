@@ -1,5 +1,8 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.register;
 
+import edu.ntnu.idi.idatt.model.Author;
+import edu.ntnu.idi.idatt.model.AuthorPostCount;
+import edu.ntnu.idi.idatt.model.DiaryEntry;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;

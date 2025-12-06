@@ -1,5 +1,10 @@
-package edu.ntnu.idi.idatt;
+package edu.ntnu.idi.idatt.ui;
 
+import edu.ntnu.idi.idatt.model.Author;
+import edu.ntnu.idi.idatt.model.AuthorPostCount;
+import edu.ntnu.idi.idatt.model.DiaryEntry;
+import edu.ntnu.idi.idatt.register.AuthorRegister;
+import edu.ntnu.idi.idatt.register.DiaryEntryRegister;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
