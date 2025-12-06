@@ -1,16 +1,13 @@
 package edu.ntnu.idi.idatt;
 
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test class for {@link DiaryEntry}.
- * <p>
- * This class verifies that DiaryEntry objects are correctly created,
+ *
+ * <p>This class verifies that DiaryEntry objects are correctly created,
  * updated, and validated. The tests cover:
  * <ul>
  *     <li>Constructor behavior and initialization of all fields</li>
@@ -36,12 +33,12 @@ class DiaryEntryTest {
 
     DiaryEntry entry = new DiaryEntry(id, forfatter, opprettet, tittel, innhold);
 
-    assertEquals(id, entry.getId());
-    assertEquals(forfatter, entry.getAuthor());
-    assertEquals(tittel, entry.getTitle());
-    assertEquals(innhold, entry.getContent());
-    assertEquals(opprettet, entry.getCreatedAt());
-    assertEquals(opprettet, entry.getLastModifiedAt());
+    Assertions.assertEquals(id, entry.getId());
+    Assertions.assertEquals(forfatter, entry.getAuthor());
+    Assertions.assertEquals(tittel, entry.getTitle());
+    Assertions.assertEquals(innhold, entry.getContent());
+    Assertions.assertEquals(opprettet, entry.getCreatedAt());
+    Assertions.assertEquals(opprettet, entry.getLastModifiedAt());
 
 
   }
@@ -51,12 +48,15 @@ class DiaryEntryTest {
    */
   @Test
   void settersUpdateText() {
-    DiaryEntry entry = new DiaryEntry(1, new Author("Shara", "Johansen", "Shara@hotmail.com"), LocalDateTime.now(), "Title", "Content");
+
+    DiaryEntry entry = new DiaryEntry(1, new Author(
+        "Shara", "Johansen", "Shara@hotmail.com"),
+        LocalDateTime.now(), "Title", "Content");
 
     entry.setTitle("New title");
     entry.setContent("New text");
-    assertEquals("New title", entry.getTitle());
-    assertEquals("New text", entry.getContent());
+    Assertions.assertEquals("New title", entry.getTitle());
+    Assertions.assertEquals("New text", entry.getContent());
   }
 
   /**
@@ -65,20 +65,27 @@ class DiaryEntryTest {
    */
   @Test
   void constructorRejectsBlankTitle() {
-    int id = 1;
 
-    assertThrows(IllegalArgumentException.class, () -> new DiaryEntry(1, new Author("Shara", "Johansen", "Shara@hotmail.com"), LocalDateTime.now(), null, "content"));
+    Author author = new Author("Shara", "Johansen", "Shara@hotmail.com");
+    LocalDateTime now = LocalDateTime.now();
+
+    Assertions.assertThrows(IllegalArgumentException.class, () ->
+        new DiaryEntry(1, author, now, null, "content"));
 
   }
 
-  /**
+  /**|
    * Ensures that setting blank content results in an
    * {@link IllegalArgumentException}.
    */
   @Test
   void setterRejectsBlankContent() {
-    DiaryEntry entry = new DiaryEntry(1, new Author("Shara", "Johansen", "Shara@hotmail.com"), LocalDateTime.now(), "Title", "");
-    assertThrows(IllegalArgumentException.class, () -> entry.setContent(""));
+
+    DiaryEntry entry = new DiaryEntry(1, new Author(
+        "Shara", "Johansen", "Shara@hotmail.com"),
+        LocalDateTime.now(), "Title", "");
+
+    Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setContent(""));
   }
 
   /**
@@ -87,7 +94,11 @@ class DiaryEntryTest {
    */
   @Test
   void constructorRejectsNullCreatedAt() {
-    assertThrows(IllegalArgumentException.class, () -> new DiaryEntry(1, new Author("Shara", "Johansen", "Shara@hotmail.com"), null, "Title", "content"));
+
+    Author author = new Author("Shara", "Johansen", "Shara@hotmail.com");
+
+    Assertions.assertThrows(IllegalArgumentException.class, () ->
+        new DiaryEntry(1, author, null, "Title", "content"));
   }
 
   /**
@@ -97,12 +108,15 @@ class DiaryEntryTest {
    */
   @Test
   void changeTitleUpdateLastEditedAt() {
-    DiaryEntry entry = new DiaryEntry(1, new Author("Shara", "Johansen", "Shara@hotmail.com"), LocalDateTime.now(), "Title", "Content");
+
+    DiaryEntry entry = new DiaryEntry(1, new Author(
+        "Shara", "Johansen", "Shara@hotmail.com"),
+        LocalDateTime.now(), "Title", "Content");
 
     LocalDateTime before = entry.getLastModifiedAt();
     entry.setTitle("New title");
     LocalDateTime after = LocalDateTime.now();
-    assertEquals(before, after);
+    Assertions.assertEquals(before, after);
   }
 
 }

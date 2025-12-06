@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -22,8 +23,8 @@ import java.util.logging.Logger;
  * </ul>
  * The class communicates with {@link DiaryEntryRegister} and {@link AuthorRegister}
  * to perform operations, while logging output using {@link java.util.logging.Logger}.
- * <p>
- * Note: This class mixes input handling, validation and control flow,
+ *
+ * <p>Note: This class mixes input handling, validation and control flow,
  * and therefore acts as both UI and controller in this version of the system.</p>
  */
 @SuppressWarnings("checkstyle:LineLength")
@@ -38,10 +39,10 @@ public class DiaryUi {
    * Prompts the user for ID, title, content and author information.
    *
    * @param register       the diary entry register used to store the entry
-   * @param AuthorRegister the author register used for finding or creating authors
+   * @param authorRegister the author register used for finding or creating authors
    * @param scanner        the scanner used to read user input
    */
-  private void addDiaryEntry(DiaryEntryRegister register, AuthorRegister AuthorRegister, Scanner scanner) {
+  private void addDiaryEntry(DiaryEntryRegister register, AuthorRegister authorRegister, Scanner scanner) {
     logger.info("Register new diary entry: ");
     logger.info("Id number: ");
     final int id;
@@ -50,12 +51,12 @@ public class DiaryUi {
       scanner.nextLine();
     } catch (InputMismatchException exception) {
       scanner.nextLine();
-      logger.info("Invalid input: " + exception.getMessage());
+      logger.info("Input mismatch: " + exception.getMessage());
       return;
     }
 
 
-    final Author author = findOrCreateAuthor(AuthorRegister);
+    final Author author = findOrCreateAuthor(authorRegister);
 
     logger.info("Title:");
     String title = scanner.nextLine();
@@ -64,10 +65,10 @@ public class DiaryUi {
     String content = scanner.nextLine();
 
     LocalDateTime date = LocalDateTime.now();
-    logger.info("Created at: " + date);
+    logger.log(Level.INFO, "Created at: {0}", date);
 
-    DiaryEntry Diary = new DiaryEntry(id, author, date, title, content);
-    register.addDiaryEntry(Diary);
+    DiaryEntry diary = new DiaryEntry(id, author, date, title, content);
+    register.addDiaryEntry(diary);
     logger.info("Diary entry added!");
   }
 
@@ -118,12 +119,12 @@ public class DiaryUi {
    * Searches for diary entries within a given date range.
    * Prompts the user for from/to dates in yyyyMMdd format.
    *
+   * <p>NOTE: Parts of the implementation of
+   * {@code findRegisteredDiaryEntryBetweenDates} was developed with assistance from ChatGPT.
+   * The logic was reviewed and integrated into the project by the author.</p>
+   *
    * @param register the diary entry register
    * @param scanner  the scanner used for input
-   *
-   * <p><b> NOTE: </b> Parts of the implementation of
-   * {@code findRegisteredDiaryEntryBetweendates} was developed with assistance from ChatGPT.
-   *  The logic was reviewed and integrated into the project by the author.</p>
    */
   private void findRegisteredDiaryEntryBetweendates(DiaryEntryRegister register, Scanner scanner) {
     logger.info("Find diary entries by date:\n");
@@ -165,19 +166,19 @@ public class DiaryUi {
     String searchTerm = word.toLowerCase();
     int searchResult = 0;
 
-    for (DiaryEntry DiaryEntry : register.getAllDiaryEntries()) {
-      String title = DiaryEntry.getTitle();
-      String content = DiaryEntry.getContent();
+    for (DiaryEntry diaryEntry : register.getAllDiaryEntries()) {
+      String title = diaryEntry.getTitle();
+      String content = diaryEntry.getContent();
 
       if ((title != null && title.toLowerCase().contains(searchTerm)) || (content != null && content.toLowerCase().contains(searchTerm))) {
-        String diaryEntry = DiaryEntry.toString();
-        logger.info(diaryEntry);
+        String diaryEntryText = diaryEntry.toString();
+        logger.info(diaryEntryText);
         searchResult++;
       }
     }
 
     if (searchResult == 0) {
-      logger.warning("No diaries have been found with the word: " + word);
+      logger.log(Level.WARNING, "No diaries have been found with the word: {0}", word);
     }
   }
 
@@ -199,7 +200,7 @@ public class DiaryUi {
    * @param register the register containing entries
    * @param scanner  scanner used to read ID
    */
-  private void DeleteDiaryEntry(DiaryEntryRegister register, Scanner scanner) {
+  private void deleteDiaryEntry(DiaryEntryRegister register, Scanner scanner) {
     logger.info("Delete diary Entry: ");
     logger.info("Id number: ");
     int id;
@@ -212,7 +213,7 @@ public class DiaryUi {
       return;
     }
 
-    register.DeleteDiaryEntry(register, id);
+    register.deleteDiaryEntry(register, id);
   }
 
   /**
@@ -293,7 +294,7 @@ public class DiaryUi {
           findRegisteredDiaryEntryBetweendates(diaryEntryRegister, scanner);
           break;
         case 4:
-          DeleteDiaryEntry(diaryEntryRegister, scanner);
+          deleteDiaryEntry(diaryEntryRegister, scanner);
           break;
         case 5:
           findAllDiaryEntriesBasedOnWord(diaryEntryRegister, scanner);

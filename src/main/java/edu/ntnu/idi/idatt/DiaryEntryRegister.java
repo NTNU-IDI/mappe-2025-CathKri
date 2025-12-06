@@ -3,17 +3,18 @@ package edu.ntnu.idi.idatt;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * Represents a register for storing and managing {@link DiaryEntry} objects.
-
- * This class provides functionality to add entries, retrieve all entries,
+ *
+ * <p>This class provides functionality to add entries, retrieve all entries,
  * search for entries based on dates or keywords, and delete entries by ID.
  *
  */
 public class DiaryEntryRegister {
-  private final ArrayList<DiaryEntry> AllDairyEntries;
+  private final ArrayList<DiaryEntry> allDairyEntries;
 
   Logger logger = Logger.getLogger(getClass().getName());
 
@@ -21,7 +22,7 @@ public class DiaryEntryRegister {
    * Creates an empty diary entry register.
    */
   public DiaryEntryRegister() {
-    AllDairyEntries = new ArrayList();
+    allDairyEntries = new ArrayList<>();
   }
 
   /**
@@ -30,7 +31,7 @@ public class DiaryEntryRegister {
    * @param diaryEntry the entry to be added
    */
   public void addDiaryEntry(DiaryEntry diaryEntry) {
-    AllDairyEntries.add(diaryEntry);
+    allDairyEntries.add(diaryEntry);
   }
 
   /**
@@ -38,9 +39,9 @@ public class DiaryEntryRegister {
    *
    * @return a list of all diary entries
    */
-  public ArrayList<DiaryEntry> getAllDiaryEntries() {
+  public List<DiaryEntry> getAllDiaryEntries() {
 
-    return AllDairyEntries;
+    return allDairyEntries;
   }
 
   /**
@@ -50,14 +51,15 @@ public class DiaryEntryRegister {
    * @param toDato   the end date/time
    * @return a list of diary entries created within the given date range
    */
-  public List<DiaryEntry> findRegisteredDiaryEntriesBasedOnDate(LocalDateTime fromDato, LocalDateTime toDato) {
+  public List<DiaryEntry> findRegisteredDiaryEntriesBasedOnDate(
+      LocalDateTime fromDato, LocalDateTime toDato) {
     List<DiaryEntry> resultsList = new ArrayList<>();
 
-    for (DiaryEntry diaryEntry : AllDairyEntries) {
+    for (DiaryEntry diaryEntry : allDairyEntries) {
       LocalDateTime createdAt = diaryEntry.getCreatedAt();
 
-      if ((createdAt.isEqual(fromDato) || createdAt.isAfter(fromDato)) &&
-          (createdAt.isEqual(toDato) || createdAt.isBefore(toDato))) {
+      if ((createdAt.isEqual(fromDato) || createdAt.isAfter(fromDato))
+          && (createdAt.isEqual(toDato) || createdAt.isBefore(toDato))) {
 
         resultsList.add(diaryEntry);
       }
@@ -70,9 +72,9 @@ public class DiaryEntryRegister {
    *
    * @param word the search keyword
    * @return a list of diary entries that match the search term,
-   *         or an empty list if the search term is null or blank
+   *     or an empty list if the search term is null or blank
    */
-  public ArrayList<DiaryEntry> findAllDiaryEntriesBasedOnWord(String word) {
+  public List<DiaryEntry> findAllDiaryEntriesBasedOnWord(String word) {
     ArrayList<DiaryEntry> resultsList = new ArrayList<>();
 
     if (word == null || word.isBlank()) {
@@ -81,12 +83,12 @@ public class DiaryEntryRegister {
 
     String searchTerm = word.toLowerCase();
 
-    for (DiaryEntry diaryEntry : AllDairyEntries) {
+    for (DiaryEntry diaryEntry : allDairyEntries) {
       String title = diaryEntry.getTitle();
       String content = diaryEntry.getContent();
 
-      if ((title != null && title.toLowerCase().contains(searchTerm)) ||
-          (content != null && content.toLowerCase().contains(searchTerm))) {
+      if ((title != null && title.toLowerCase().contains(searchTerm))
+          || (content != null && content.toLowerCase().contains(searchTerm))) {
 
         resultsList.add(diaryEntry);
       }
@@ -102,18 +104,18 @@ public class DiaryEntryRegister {
    * @param register the register containing diary entries
    * @param id       the ID of the entry to delete
    */
-  public void DeleteDiaryEntry(DiaryEntryRegister register, int id) {
+  public void deleteDiaryEntry(DiaryEntryRegister register, int id) {
     DiaryEntry diaryEntryToRemove = null;
-    for (DiaryEntry diaryEntry : AllDairyEntries) {
+    for (DiaryEntry diaryEntry : allDairyEntries) {
       if (diaryEntry.getId() == id) {
         diaryEntryToRemove = diaryEntry;
-        logger.info("DiaryEntry " + id + " has been deleted");
+        logger.log(Level.INFO, "DiaryEntry {0} has been deleted", id);
       }
     }
     if (diaryEntryToRemove != null) {
-      register.AllDairyEntries.remove(diaryEntryToRemove);
+      register.allDairyEntries.remove(diaryEntryToRemove);
     } else {
-      logger.info("DiaryEntry with id: " + id + " not found.");
+      logger.log(Level.INFO, "DiaryEntry with id {0} not found.", id);
     }
   }
 

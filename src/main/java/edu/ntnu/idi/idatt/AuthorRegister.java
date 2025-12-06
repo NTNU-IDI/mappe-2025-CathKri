@@ -11,13 +11,13 @@ import java.util.logging.Logger;
  */
 public class AuthorRegister {
   Logger logger = Logger.getLogger(getClass().getName());
-  private ArrayList<Author> AuthorsList;
+  private List<Author> authorsList;
 
   /**
    * Creates a new, empty author register.
    */
   public AuthorRegister() {
-    AuthorsList = new ArrayList<Author>();
+    authorsList = new ArrayList<>();
   }
 
   /**
@@ -25,8 +25,8 @@ public class AuthorRegister {
    *
    * @return a list containing all authors in the register
    */
-  public ArrayList<Author> getAuthorsList() {
-    return AuthorsList;
+  public List<Author> getAuthorsList() {
+    return authorsList;
   }
 
   /**
@@ -34,8 +34,8 @@ public class AuthorRegister {
    *
    * @param authorsList the new list of authors
    */
-  public void setAuthorsList(ArrayList<Author> authorsList) {
-    this.AuthorsList = authorsList;
+  public void setAuthorsList(List<Author> authorsList) {
+    this.authorsList = authorsList;
   }
 
   /**
@@ -46,7 +46,7 @@ public class AuthorRegister {
    * @return the matching {@link Author}, or {@code null} if not found
    */
   public Author findAuthor(String firstName, String lastName) {
-    for (Author author : AuthorsList) {
+    for (Author author : authorsList) {
       if (author.getFirstName().equals(firstName) && author.getLastName().equals(lastName)) {
         return author;
       }
@@ -60,7 +60,7 @@ public class AuthorRegister {
    * @param author the author to add
    */
   public void addAuthor(Author author) {
-    AuthorsList.add(author);
+    authorsList.add(author);
   }
 
   /**
@@ -70,12 +70,13 @@ public class AuthorRegister {
    * @param author   the author whose entries should be retrieved
    * @return a list of all diary entries belonging to the given author
    */
-  public List<DiaryEntry> findAllDiaryEntriesFromAuthor(DiaryEntryRegister register, Author author) {
-    ArrayList<DiaryEntry> DiaryEntryList = register.getAllDiaryEntries();
+  public List<DiaryEntry> findAllDiaryEntriesFromAuthor(
+      DiaryEntryRegister register, Author author) {
+    List<DiaryEntry> diaryEntryList = register.getAllDiaryEntries();
     ArrayList<DiaryEntry> allDiaryEntries = new ArrayList<>();
-    for (DiaryEntry DiaryEntry : DiaryEntryList) {
-      if (DiaryEntry.getAuthor().equals(author)) {
-        allDiaryEntries.add(DiaryEntry);
+    for (DiaryEntry diaryEntry : diaryEntryList) {
+      if (diaryEntry.getAuthor().equals(author)) {
+        allDiaryEntries.add(diaryEntry);
       }
     }
     return allDiaryEntries;
@@ -85,15 +86,16 @@ public class AuthorRegister {
   /**
    * Creates a list showing how many posts each author has written.
    *
+   * <p>NOTE: The implementation of {@code createAuthorPostList} was developed
+   * * with assistance from ChatGPT.
+   * * The logic was reviewed and integrated into the project by the author.</p>
+   *
    * @param register       the diary entry register containing entries
    * @param authorRegister the register containing authors
    * @return a list of {@link AuthorPostCount} describing posts per author
-   *
-   * <p><b> NOTE: </b> The implementation of
-   * {@code createAuthorPostList} was developed with assistance from ChatGPT.
-   * The logic was reviewed and integrated into the project by the author.</p>
    */
-  public List<AuthorPostCount> createAuthorPostList(DiaryEntryRegister register, AuthorRegister authorRegister) {
+  public List<AuthorPostCount> createAuthorPostList(
+      DiaryEntryRegister register, AuthorRegister authorRegister) {
     List<AuthorPostCount> list = new ArrayList<>();
 
     for (Author author : authorRegister.getAuthorsList()) {
@@ -131,7 +133,8 @@ public class AuthorRegister {
     logger.info(" ");
 
     for (AuthorPostCount item : list) {
-      logger.info(item.author().getFirstName() + " " + item.author().getLastName() + ": " + "\t\t" + item.postCount());
+      logger.info(item.author().getFirstName() + " "
+          + item.author().getLastName() + ": " + "\t\t" + item.postCount());
     }
   }
 }

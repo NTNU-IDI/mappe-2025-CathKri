@@ -7,17 +7,19 @@
     <list default="true" id="fb7b91b3-9861-4567-87bc-83c7387c7ceb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryUi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorRegisterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/Author.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorPostCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorPostCount.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryUi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryUi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorRegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorRegisterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -117,7 +119,7 @@
       <recent name="edu.ntnu.idi.idatt" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList">
+  <component name="RunManager" selected="Application.Dagbokapplikasjon">
     <configuration name="Dagbokapplikasjon" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryApplication" />
       <module name="IDATA1003-asty-dagbok" />
@@ -187,7 +189,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryEntryRegisterTest.whenAddingNull_stillAddingDiaryEntryInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IDATA1003-asty-dagbok" />
       <extension name="coverage">
         <pattern>
@@ -197,7 +199,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryEntryRegisterTest" />
-      <option name="METHOD_NAME" value="whenAddingNull_StillAddingDiaryEntryInList" />
+      <option name="METHOD_NAME" value="whenAddingNull_stillAddingDiaryEntryInList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,7 +216,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.Dagbokapplikasjon" />
-      <item itemvalue="JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList" />
+      <item itemvalue="JUnit.DiaryEntryRegisterTest.whenAddingNull_stillAddingDiaryEntryInList" />
       <item itemvalue="JUnit.AuthorRegisterTest" />
       <item itemvalue="JUnit.DiaryEntryRegisterTest" />
       <item itemvalue="JUnit.DiaryEntryRegisterTest.deleteRemoveEntry" />
@@ -222,7 +224,7 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList" />
+        <item itemvalue="JUnit.DiaryEntryRegisterTest.whenAddingNull_stillAddingDiaryEntryInList" />
         <item itemvalue="JUnit.DiaryEntryRegisterTest.deleteRemoveEntry" />
         <item itemvalue="JUnit.AuthorRegisterTest" />
         <item itemvalue="JUnit.AuthorRegisterTest.finnAuthorInList" />

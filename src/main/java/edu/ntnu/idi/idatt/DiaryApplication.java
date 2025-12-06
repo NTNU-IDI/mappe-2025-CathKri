@@ -26,8 +26,8 @@ public class DiaryApplication {
         Objects.requireNonNull(DiaryApplication.class.getClassLoader()
             .getResource("logging.properties")).getFile());
 
-    DiaryUi DiaryUI = new DiaryUi();
-    DiaryUI.init();
-    DiaryUI.start();
+    DiaryUi diaryUi = new DiaryUi();
+    diaryUi.init();
+    diaryUi.start();
   }
 }

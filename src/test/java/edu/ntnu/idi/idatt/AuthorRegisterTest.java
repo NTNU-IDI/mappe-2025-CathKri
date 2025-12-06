@@ -1,16 +1,14 @@
 package edu.ntnu.idi.idatt;
 
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test class for {@link AuthorRegister}.
- * <p>
- * This class contains unit tests verifying core functionality of the
+ *
+ * <p>This class contains unit tests verifying core functionality of the
  * AuthorRegister component, including:
  * <ul>
  *     <li>Initialization of the internal author list</li>
@@ -19,7 +17,6 @@ import static org.junit.jupiter.api.Assertions.*;
  *     <li>Retrieving entries associated with a specific author</li>
  *     <li>Counting diary entries per author</li>
  * </ul>
- * <p>
  * The tests use JUnit 5 assertions to validate expected outcomes.
  */
 class AuthorRegisterTest {
@@ -30,8 +27,8 @@ class AuthorRegisterTest {
   @Test
   void constructor_whenCalled_initializesEmptyAuthorList() {
     AuthorRegister authorRegister = new AuthorRegister();
-    assertNotNull(authorRegister.getAuthorsList());
-    assertTrue(authorRegister.getAuthorsList().isEmpty());
+    Assertions.assertNotNull(authorRegister.getAuthorsList());
+    Assertions.assertTrue(authorRegister.getAuthorsList().isEmpty());
   }
 
   /**
@@ -43,7 +40,7 @@ class AuthorRegisterTest {
     AuthorRegister authorRegister = new AuthorRegister();
     authorRegister.setAuthorsList(null);
 
-    assertNull(authorRegister.getAuthorsList());
+    Assertions.assertNull(authorRegister.getAuthorsList());
   }
 
   /**
@@ -55,11 +52,13 @@ class AuthorRegisterTest {
     AuthorRegister authorRegister = new AuthorRegister();
     Author nr1 = new Author("Shara", "Johansen", "SharaJ@hotmail.com");
     Author nr2 = new Author("Tom", "Eriksen", "tom@hotmail.com");
+
     authorRegister.addAuthor(nr1);
     authorRegister.addAuthor(nr2);
 
-    assertEquals(2, authorRegister.getAuthorsList().size());
+    Assertions.assertEquals(2, authorRegister.getAuthorsList().size());
   }
+
   /**
    * Tests adding a null author to the register.
    * The current implementation still inserts the value,
@@ -70,8 +69,9 @@ class AuthorRegisterTest {
     AuthorRegister authorRegister = new AuthorRegister();
     authorRegister.addAuthor(null);
 
-    assertFalse(authorRegister.getAuthorsList().isEmpty());
+    Assertions.assertFalse(authorRegister.getAuthorsList().isEmpty());
   }
+
   /**
    * Verifies that the register correctly returns all diary entries
    * matching a specific author.
@@ -81,9 +81,17 @@ class AuthorRegisterTest {
     DiaryEntryRegister diaryEntryRegister = new DiaryEntryRegister();
     Author author1 = new Author("Tom", "Jones", "TJ@hotmail.com");
     Author author2 = new Author("Finn", "Finnsnes", "FF@hotmail.com");
-    DiaryEntry entry1 = new DiaryEntry(5, author1, LocalDateTime.now(), "title", "tekst");
-    DiaryEntry entry2 = new DiaryEntry(6, author2, LocalDateTime.now(), "title", "tekst");
-    DiaryEntry entry3 = new DiaryEntry(7, author1, LocalDateTime.now(), "title", "tekst");
+
+    DiaryEntry entry1 = new DiaryEntry(
+        5, author1, LocalDateTime.now(), "title", "tekst"
+    );
+    DiaryEntry entry2 = new DiaryEntry(
+        6, author2, LocalDateTime.now(), "title", "tekst"
+    );
+    DiaryEntry entry3 = new DiaryEntry(
+        7, author1, LocalDateTime.now(), "title", "tekst"
+    );
+
     diaryEntryRegister.addDiaryEntry(entry1);
     diaryEntryRegister.addDiaryEntry(entry2);
     diaryEntryRegister.addDiaryEntry(entry3);
@@ -92,9 +100,11 @@ class AuthorRegisterTest {
     authorRegister.addAuthor(author1);
     authorRegister.addAuthor(author2);
 
-    ArrayList<DiaryEntry> number = (ArrayList<DiaryEntry>) authorRegister.findAllDiaryEntriesFromAuthor(diaryEntryRegister, author1);
+    ArrayList<DiaryEntry> result =
+        (ArrayList<DiaryEntry>) authorRegister.findAllDiaryEntriesFromAuthor(
+            diaryEntryRegister, author1);
 
-    assertEquals(2, number.size());
+    Assertions.assertEquals(2, result.size());
   }
 
   /**
@@ -105,11 +115,18 @@ class AuthorRegisterTest {
   void numberOfEntriesPerAuthor_whenMultipleAuthors_returnsCorrectCounts() {
     Author author1 = new Author("Tom", "Jones", "TJ@hotmail.com");
     Author author2 = new Author("Finn", "Finnsnes", "FF@hotmail.com");
-    DiaryEntry entry1 = new DiaryEntry(5, author1, LocalDateTime.now(), "title", "tekst");
-    DiaryEntry entry2 = new DiaryEntry(6, author2, LocalDateTime.now(), "title", "tekst");
-    DiaryEntry entry3 = new DiaryEntry(7, author1, LocalDateTime.now(), "title", "tekst");
-    DiaryEntryRegister diaryEntryRegister = new DiaryEntryRegister();
 
+    DiaryEntry entry1 = new DiaryEntry(
+        5, author1, LocalDateTime.now(), "title", "tekst"
+    );
+    DiaryEntry entry2 = new DiaryEntry(
+        6, author2, LocalDateTime.now(), "title", "tekst"
+    );
+    DiaryEntry entry3 = new DiaryEntry(
+        7, author1, LocalDateTime.now(), "title", "tekst"
+    );
+
+    DiaryEntryRegister diaryEntryRegister = new DiaryEntryRegister();
     diaryEntryRegister.addDiaryEntry(entry1);
     diaryEntryRegister.addDiaryEntry(entry2);
     diaryEntryRegister.addDiaryEntry(entry3);
@@ -118,11 +135,15 @@ class AuthorRegisterTest {
     authorRegister.addAuthor(author1);
     authorRegister.addAuthor(author2);
 
-    ArrayList<DiaryEntry> number1 = (ArrayList<DiaryEntry>) authorRegister.findAllDiaryEntriesFromAuthor(diaryEntryRegister, author1);
-    ArrayList<DiaryEntry> number2 = (ArrayList<DiaryEntry>) authorRegister.findAllDiaryEntriesFromAuthor(diaryEntryRegister, author2);
+    ArrayList<DiaryEntry> author1Entries =
+        (ArrayList<DiaryEntry>) authorRegister.findAllDiaryEntriesFromAuthor(
+            diaryEntryRegister, author1);
 
-    assertEquals(2, number1.size());
-    assertEquals(1, number2.size());
+    ArrayList<DiaryEntry> author2Entries =
+        (ArrayList<DiaryEntry>) authorRegister.findAllDiaryEntriesFromAuthor(
+            diaryEntryRegister, author2);
+
+    Assertions.assertEquals(2, author1Entries.size());
+    Assertions.assertEquals(1, author2Entries.size());
   }
-
 }

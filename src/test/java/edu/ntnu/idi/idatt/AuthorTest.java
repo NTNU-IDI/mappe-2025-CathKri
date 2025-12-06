@@ -1,14 +1,12 @@
 package edu.ntnu.idi.idatt;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Test class for verifying the functionality of the {@link Author} class.
- * <p>
- * The tests ensure that:
+ *
+ * <p>The tests ensure that:
  * <ul>
  *   <li>The constructor correctly stores the provided values.</li>
  *   <li>Setter methods properly update the field values.</li>
@@ -23,15 +21,15 @@ class AuthorTest {
   @Test
   void whenConstructorStoreValue_constructorShouldStoreAllValuesCorrectly() {
     String firstName = "Shara";
-    String LastName = "Johansen";
+    String lastName = "Johansen";
     String email = "SharaJ@hotmail.com";
 
 
-    Author entry = new Author(firstName, LastName, email);
+    Author entry = new Author(firstName, lastName, email);
 
-    assertEquals(firstName, entry.getFirstName());
-    assertEquals(LastName, entry.getLastName());
-    assertEquals(email, entry.getEmail());
+    Assertions.assertEquals(firstName, entry.getFirstName());
+    Assertions.assertEquals(lastName, entry.getLastName());
+    Assertions.assertEquals(email, entry.getEmail());
 
 
   }
@@ -46,9 +44,9 @@ class AuthorTest {
     entry.setFirstName("New firstname");
     entry.setLastName("New lastname");
     entry.setEmail("New email");
-    assertEquals("New firstname", entry.getFirstName());
-    assertEquals("New lastname", entry.getLastName());
-    assertEquals("New email", entry.getEmail());
+    Assertions.assertEquals("New firstname", entry.getFirstName());
+    Assertions.assertEquals("New lastname", entry.getLastName());
+    Assertions.assertEquals("New email", entry.getEmail());
   }
 
   /**
@@ -57,7 +55,7 @@ class AuthorTest {
   @Test
   void whenSettingBlankFirstName_setFirstNameShouldRejectBlankValue() {
     Author entry = new Author("", "Johansen", "SharaJ@hotmail.com");
-    assertThrows(IllegalArgumentException.class, () -> entry.setFirstName(""));
+    Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setFirstName(""));
   }
 
   /**
@@ -66,7 +64,7 @@ class AuthorTest {
   @Test
   void whenSettingBlankLastName_setLastNameShouldRejectBlankValue() {
     Author entry = new Author("", "Johansen", "SharaJ@hotmail.com");
-    assertThrows(IllegalArgumentException.class, () -> entry.setLastName(""));
+    Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setLastName(""));
   }
 
   /**
@@ -75,6 +73,6 @@ class AuthorTest {
   @Test
   void whenSettingBlankEmail_setEmailShouldRejectBlankValue() {
     Author entry = new Author("", "Johansen", "SharaJ@hotmail.com");
-    assertThrows(IllegalArgumentException.class, () -> entry.setEmail(""));
+    Assertions.assertThrows(IllegalArgumentException.class, () -> entry.setEmail(""));
   }
 }
