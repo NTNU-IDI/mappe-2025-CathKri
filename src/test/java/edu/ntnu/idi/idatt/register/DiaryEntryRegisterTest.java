@@ -37,7 +37,7 @@ class DiaryEntryRegisterTest {
    * Current implementation accepts and stores null entries.
    */
   @Test
-  void whenAddingNull_stillAddingDiaryEntryInList() {
+  void whenListIsNull_stillAddingDiaryEntryInList() {
     DiaryEntryRegister register = new DiaryEntryRegister();
     register.addDiaryEntry(null);
 
@@ -78,11 +78,12 @@ class DiaryEntryRegisterTest {
     Assertions.assertFalse(results.contains(entry3));
   }
 
+
   /**
-   * Ensures that the register correctly returns all diary entries containing a specific word
-   * in their text content.
+   * Verifies that entries are correctly retrieved when filtering by a date interval.
    *
-   * <p>Only entries where the body text contains the searched word should be returned.
+   * <p>Entries with timestamps inside the range should be included,
+   * while entries outside should be excluded.
    */
   @Test
   void findAndReturnRegisteredDiaryEntryBasedOnDate() {

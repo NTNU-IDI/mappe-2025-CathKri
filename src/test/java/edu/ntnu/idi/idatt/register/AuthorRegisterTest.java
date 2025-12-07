@@ -27,7 +27,7 @@ class AuthorRegisterTest {
    * Verifies that the constructor initializes an empty author list.
    */
   @Test
-  void constructor_whenCalled_initializesEmptyAuthorList() {
+  void whenConstructorCalled_initializesEmptyAuthorList() {
     AuthorRegister authorRegister = new AuthorRegister();
     Assertions.assertNotNull(authorRegister.getAuthorsList());
     Assertions.assertTrue(authorRegister.getAuthorsList().isEmpty());
@@ -38,7 +38,7 @@ class AuthorRegisterTest {
    * In this case, verifies that setting it to null is accepted.
    */
   @Test
-  void setAuthorsList_whenSetToNull_listBecomesNull() {
+  void whenSetAuthorListToNull_listBecomesNull() {
     AuthorRegister authorRegister = new AuthorRegister();
     authorRegister.setAuthorsList(null);
 
@@ -50,7 +50,7 @@ class AuthorRegisterTest {
    * Adds two authors and checks that the list size increases accordingly.
    */
   @Test
-  void addAuthor_whenAuthorsAdded_listContainsAllAuthors() {
+  void whenAuthorsAdded_listContainsAllAuthors() {
     AuthorRegister authorRegister = new AuthorRegister();
     Author nr1 = new Author("Shara", "Johansen", "SharaJ@hotmail.com");
     Author nr2 = new Author("Tom", "Eriksen", "tom@hotmail.com");
@@ -67,7 +67,7 @@ class AuthorRegisterTest {
    * therefore the list should not remain empty.
    */
   @Test
-  void addAuthor_whenNullAuthorAdded_listStillUpdates() {
+  void whenNullAuthorAdded_listStillUpdates() {
     AuthorRegister authorRegister = new AuthorRegister();
     authorRegister.addAuthor(null);
 

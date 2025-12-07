@@ -10,7 +10,6 @@ import java.util.Objects;
  * The entry also stores the last time it was modified.
  *
  * @author Cathrine Kristiansen
- * @version 6.0
  * @since 2025-10-12
  */
 public class DiaryEntry {

@@ -90,8 +90,8 @@ public class AuthorRegister {
    * Creates a list showing how many posts each author has written.
    *
    * <p>NOTE: The implementation of {@code createAuthorPostList} was developed
-   * * with assistance from ChatGPT.
-   * * The logic was reviewed and integrated into the project by the author.</p>
+   *   with assistance from ChatGPT.
+   *   The logic was reviewed and integrated into the project by the author.</p>
    *
    * @param register       the diary entry register containing entries
    * @param authorRegister the register containing authors

@@ -5,48 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb7b91b3-9861-4567-87bc-83c7387c7ceb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/target/IDATA1003-asty-dagbok-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/register/AuthorRegister.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.ntnu.idi.idatt.model.AuthorTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.ntnu.idi.idatt.model.DiaryEntryTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.ntnu.idi.idatt.register.AuthorRegisterTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.ntnu.idi.idatt.register.DiaryEntryRegisterTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/edu.ntnu.idi.idatt.model.AuthorTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/edu.ntnu.idi.idatt.model.DiaryEntryTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/edu.ntnu.idi.idatt.register.AuthorRegisterTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/edu.ntnu.idi.idatt.register.DiaryEntryRegisterTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/register/AuthorRegisterTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/register/DiaryEntryRegisterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/model/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorPostCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/model/AuthorPostCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/AuthorRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/register/AuthorRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/model/DiaryEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryEntryRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/register/DiaryEntryRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/DiaryUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/ui/DiaryUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/register/AuthorRegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/AuthorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/model/AuthorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/register/DiaryEntryRegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/DiaryEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/model/DiaryEntryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/model/Author.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorPostCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/model/AuthorPostCount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/AuthorRegister.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/model/DiaryEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryEntryRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/register/DiaryEntryRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/DiaryUi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/ntnu/idi/idatt/ui/DiaryUi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorRegisterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/AuthorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/model/AuthorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryRegisterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/DiaryEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/ntnu/idi/idatt/model/DiaryEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/model/DiaryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/model/DiaryEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/register/AuthorRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/ntnu/idi/idatt/register/AuthorRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/register/AuthorRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/register/AuthorRegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/register/DiaryEntryRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/ntnu/idi/idatt/register/DiaryEntryRegisterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +62,7 @@
     "JUnit.DiaryEntryRegisterTest.executor": "Run",
     "JUnit.DiaryEntryRegisterTest.findAndReturnRegisteredDiaryEntryBasedOnDate.executor": "Run",
     "JUnit.DiaryEntryRegisterTest.whenAddingNull_StillAddingDiaryEntryInList.executor": "Run",
+    "JUnit.DiaryEntryTest (1).executor": "Run",
     "JUnit.DiaryEntryTest.constructorRejectsBlankTitle.executor": "Run",
     "JUnit.DiaryEntryTest.constructorRejectsNullCreatedAt.executor": "Run",
     "JUnit.DiaryEntryTest.constructorStoresAllValue.executor": "Run",
@@ -153,10 +117,25 @@
       <recent name="edu.ntnu.idi.idatt" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DiaryEntryTest">
+  <component name="RunManager" selected="JUnit.AuthorTest">
     <configuration name="Dagbokapplikasjon" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryApplication" />
       <module name="IDATA1003-asty-dagbok" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorRegisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IDATA1003-asty-dagbok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idi.idatt.register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt.register" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.register.AuthorRegisterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,12 +144,12 @@
       <module name="IDATA1003-asty-dagbok" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idi.idatt.*" />
+          <option name="PATTERN" value="edu.ntnu.idi.idatt.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.AuthorTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt.model" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.model.AuthorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,12 +159,27 @@
       <module name="IDATA1003-asty-dagbok" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.ntnu.idi.idatt.*" />
+          <option name="PATTERN" value="edu.ntnu.idi.idatt.register.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryEntryRegisterTest" />
+      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt.register" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.register.DiaryEntryRegisterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryEntryTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IDATA1003-asty-dagbok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.ntnu.idi.idatt.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt.model" />
+      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.model.DiaryEntryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,38 +200,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryEntryTest.constructorRejectsBlankTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IDATA1003-asty-dagbok" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idi.idatt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryEntryTest" />
-      <option name="METHOD_NAME" value="constructorRejectsBlankTitle" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DiaryEntryTest.setterRejectsBlankContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IDATA1003-asty-dagbok" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.ntnu.idi.idatt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.ntnu.idi.idatt" />
-      <option name="MAIN_CLASS_NAME" value="edu.ntnu.idi.idatt.DiaryEntryTest" />
-      <option name="METHOD_NAME" value="setterRejectsBlankContent" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -249,19 +211,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Dagbokapplikasjon" />
+      <item itemvalue="JUnit.AuthorRegisterTest" />
+      <item itemvalue="JUnit.DiaryEntryTest (1)" />
       <item itemvalue="JUnit.AuthorTest" />
       <item itemvalue="JUnit.DiaryEntryTest" />
-      <item itemvalue="JUnit.DiaryEntryTest.constructorRejectsBlankTitle" />
-      <item itemvalue="JUnit.DiaryEntryTest.setterRejectsBlankContent" />
       <item itemvalue="JUnit.DiaryEntryRegisterTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DiaryEntryTest" />
-        <item itemvalue="JUnit.DiaryEntryTest.setterRejectsBlankContent" />
-        <item itemvalue="JUnit.DiaryEntryTest.constructorRejectsBlankTitle" />
-        <item itemvalue="JUnit.DiaryEntryRegisterTest" />
         <item itemvalue="JUnit.AuthorTest" />
+        <item itemvalue="JUnit.DiaryEntryTest (1)" />
+        <item itemvalue="JUnit.DiaryEntryRegisterTest" />
+        <item itemvalue="JUnit.AuthorRegisterTest" />
+        <item itemvalue="JUnit.DiaryEntryTest" />
       </list>
     </recent_temporary>
   </component>
