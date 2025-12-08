@@ -7,7 +7,8 @@
 [//]: # (TODO: Fill inn your name and student ID)
 
 **STUDENT NAME** = Cathrine Kristiansen  
-**STUDENT ID** = 128744
+**STUDENT ID** = 128744 
+
 **KANDIDAT NR** = 10085
 
 ## Project description
@@ -160,6 +161,7 @@ References are included in the project report.
 
 [//]: # (TODO: Include references here, if any. For example, if you have used code from the course book, include a reference to the chapter.
 Or if you have used code from a website or other source, include a link to the source.)
+
 
 
 
